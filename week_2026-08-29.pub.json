@@ -1,0 +1,659 @@
+{
+ "week": "2026-08-29",
+ "src": "Marks as of US close 28 Aug 2026. 501 daily bars, 44 relative-strength rows across a 45-symbol universe. Bid/ask unavailable on a weekend pull, so every price here is a close, a last or a settlement mark.",
+ "lede": [
+  {
+   "st": "act",
+   "h": "Warsh used his first Jackson Hole to say inflation has not meaningfully slowed and policy is not restrictive",
+   "s": "July PCE printed <b>+0.2% m/m against +0.1% expected</b>, with the annual rate rising to 3.7% v 3.6% forecast — an acceleration, not a plateau. The 10Y rose two consecutive sessions into the speech and touched 4.7% before paring. Kansas City's Schmid said the same in plainer terms. Markets are now carrying a hike before year-end. Worth holding against the fact that <b>SPY implied vol is at the 2nd percentile</b>."
+  },
+  {
+   "st": "act",
+   "h": "Treasury doubled its buyback programme and the long end absorbed it inside 48 hours",
+   "s": "Liquidity-support buybacks doubled to $4bn/quarter across 10–30 year paper after the 30Y hit its highest level since 2007. Yields fell as much as 9bp on the announcement, then <b>climbed 7bp back to 5.26% the next session</b>, returning to pre-announcement levels. Settled at 5.19%, +0.37 over 20 days. Cited concerns: deficits, persistent inflation, heavy issuance, and AI-related borrowing adding to long-end supply."
+  },
+  {
+   "st": "warn",
+   "h": "The regime read stepped down to UNASSIGNED on a 0.0096 correlation move",
+   "s": "SPY/TLT 60-day correlation fell from 0.3078 to 0.286278, which is 0.0096 below its full-history 95th percentile. That single crossing flipped one voting family to ABSTAIN and took the composite from CONFIRMED to PROVISIONAL. The trailing-10-year percentile is <b>still 89.5</b>. The way I read it, the label moved considerably further than the evidence did."
+  },
+  {
+   "st": "hold",
+   "h": "Thirteen of forty-four rows fire the rotation screen, and four of the top five are metals",
+   "s": "SIL +26.39, GDX +26.06, COPX +15.04 and XME +12.84 all show positive 4-week relative strength with de-correlation from SPY — while <b>their parent sector XLB is RS_4wk −0.75</b>. That is a composition read rather than sector flow: the index is flat while its metals constituents run 13 to 26 points ahead of the market."
+  },
+  {
+   "st": "hold",
+   "h": "The dollar is soft and the softness is decaying",
+   "s": "DXY closed 99.125 on Friday, still above 99. UUP relative strength improved from −6.04 to −3.59 — dollar weakness that is fading rather than deepening, against a long end that keeps rising."
+  }
+ ],
+ "sectors": [
+  {
+   "c": "XLE",
+   "n": "Energy",
+   "rs1w": -1.98,
+   "rs4w": 2.58,
+   "rs3m": 9.65,
+   "shift": -0.08,
+   "a200": true,
+   "p200": 15.32,
+   "sig": "div"
+  },
+  {
+   "c": "XLC",
+   "n": "Comm Svcs",
+   "rs1w": 0.96,
+   "rs4w": 2.28,
+   "rs3m": -4.03,
+   "shift": 0.12,
+   "a200": false,
+   "p200": -0.91,
+   "sig": "flow"
+  },
+  {
+   "c": "XLK",
+   "n": "Technology",
+   "rs1w": 0.83,
+   "rs4w": 1.94,
+   "rs3m": -4.49,
+   "shift": -0.02,
+   "a200": true,
+   "p200": 16.54,
+   "sig": "div"
+  },
+  {
+   "c": "XLV",
+   "n": "Health Care",
+   "rs1w": -2.45,
+   "rs4w": 0.94,
+   "rs3m": 12.81,
+   "shift": 0.15,
+   "a200": true,
+   "p200": 10.52,
+   "sig": "flow"
+  },
+  {
+   "c": "XLY",
+   "n": "Cons Disc",
+   "rs1w": -1.16,
+   "rs4w": 0.56,
+   "rs3m": -4.73,
+   "shift": -0.24,
+   "a200": true,
+   "p200": 0.18,
+   "sig": "div"
+  },
+  {
+   "c": "XLB",
+   "n": "Materials",
+   "rs1w": -1.14,
+   "rs4w": -0.75,
+   "rs3m": 2.27,
+   "shift": 0.05,
+   "a200": true,
+   "p200": 6.69,
+   "sig": "lag"
+  },
+  {
+   "c": "XLF",
+   "n": "Financials",
+   "rs1w": 0.61,
+   "rs4w": -1.8,
+   "rs3m": 10.94,
+   "shift": 0.1,
+   "a200": true,
+   "p200": 8.88,
+   "sig": "lag"
+  },
+  {
+   "c": "XLP",
+   "n": "Cons Staples",
+   "rs1w": -1.1,
+   "rs4w": -3.75,
+   "rs3m": 1.36,
+   "shift": 0.42,
+   "a200": true,
+   "p200": 2.79,
+   "sig": "lag"
+  },
+  {
+   "c": "XLI",
+   "n": "Industrials",
+   "rs1w": -2.2,
+   "rs4w": -4.43,
+   "rs3m": 0.62,
+   "shift": 0.04,
+   "a200": true,
+   "p200": 4.07,
+   "sig": "lag"
+  },
+  {
+   "c": "XLRE",
+   "n": "Real Estate",
+   "rs1w": -1.8,
+   "rs4w": -5.54,
+   "rs3m": -0.59,
+   "shift": 0.43,
+   "a200": true,
+   "p200": 3.45,
+   "sig": "lag"
+  },
+  {
+   "c": "XLU",
+   "n": "Utilities",
+   "rs1w": -0.56,
+   "rs4w": -8.05,
+   "rs3m": -5.5,
+   "shift": 0.09,
+   "a200": false,
+   "p200": -4.43,
+   "sig": "lag"
+  }
+ ],
+ "secNote": "Ranked by RS_4wk, the actionable window. <b>corr_shift</b> is 20-day correlation to SPY minus 60-day: negative means the sector is moving away from the index rather than with it. A sector that is both outperforming and de-correlating is the shape that suggests money is being allocated to it rather than the whole market rising together.",
+ "subind": [
+  {
+   "c": "SIL",
+   "p": "XLB",
+   "rs1w": -0.88,
+   "rs4w": 26.39,
+   "rs3m": 4.07,
+   "shift": -0.29,
+   "a200": true,
+   "p200": 11.55,
+   "note": "Strongest row in the universe. +28.51 → +26.39, so it has stopped accelerating but has not rolled over. RS_1wk −0.88 is the first negative short-window reading in weeks. +20.1% over its 50-day. The metal itself carries IV/HV 1.08 — implied vol above realised."
+  },
+  {
+   "c": "GDX",
+   "p": "XLB",
+   "rs1w": -3.56,
+   "rs4w": 26.06,
+   "rs3m": 9.65,
+   "shift": -0.33,
+   "a200": true,
+   "p200": 20.91,
+   "note": "+33.34 → <b>+26.06</b>, the first deceleration after three weeks of acceleration, with RS_1wk −3.56. Positive relative strength with de-correlation for a fourth week. IV has fallen from the 87th to the 68.5th percentile, with IV/HV 0.94 — implied below realised, on a percentile that is not low."
+  },
+  {
+   "c": "IBIT",
+   "p": "CRYPTO",
+   "rs1w": 0.03,
+   "rs4w": 15.89,
+   "rs3m": 3.75,
+   "shift": -0.4,
+   "a200": true,
+   "p200": 18.4,
+   "note": "The <b>most de-correlated row in the universe at −0.40</b>. 43.90, sitting +18.4% over its 50-day and only +2.9% over the 200-day — the 50-day gap is the entire move. IV 37.01 at the 27.9th percentile, IV/HV <b>1.01</b>, implied and realised almost exactly level."
+  },
+  {
+   "c": "COPX",
+   "p": "XLB",
+   "rs1w": -0.65,
+   "rs4w": 15.04,
+   "rs3m": 5.43,
+   "shift": -0.31,
+   "a200": true,
+   "p200": 18.0,
+   "note": "Copper miners. RS_4wk +15.04 with corr_shift −0.31, +18.0% over the 50-day."
+  },
+  {
+   "c": "XME",
+   "p": "XLB",
+   "rs1w": -0.97,
+   "rs4w": 12.84,
+   "rs3m": -6.87,
+   "shift": -0.06,
+   "a200": true,
+   "p200": 5.92,
+   "note": "Fires on the 4-week leg but <b>RS_3mo is −6.87</b> — the trend anchor disagrees with the actionable window. Four of the top five rows are XLB children while XLB itself is −0.75."
+  },
+  {
+   "c": "URA",
+   "p": "XLE",
+   "rs1w": -1.56,
+   "rs4w": 11.0,
+   "rs3m": -11.92,
+   "shift": -0.09,
+   "a200": false,
+   "p200": -6.03,
+   "note": "RS_4wk +11.00 with de-correlation, but RS_3mo −11.92 and below the 200-day. An early move against a broken longer trend rather than a confirmed one. Junior miners say the same: URNJ +12.61, corr_shift −0.20."
+  },
+  {
+   "c": "OIH",
+   "p": "XLE",
+   "rs1w": 0.25,
+   "rs4w": 7.57,
+   "rs3m": -1.69,
+   "shift": -0.14,
+   "a200": true,
+   "p200": 11.7,
+   "note": "Oil services leading the energy sector while crude itself is negative — USO RS_4wk −1.99. Equities over the commodity, which XLE/USO confirms at +4.49% over four weeks."
+  },
+  {
+   "c": "IGV",
+   "p": "XLK",
+   "rs1w": 5.46,
+   "rs4w": 13.62,
+   "rs3m": 6.01,
+   "shift": 0.23,
+   "a200": true,
+   "p200": 16.88,
+   "note": "Software against semis: SMH RS_3mo −9.35 v IGV +6.01, IGV RS_4wk +13.62 — but corr_shift <b>+0.23</b>, so IGV is rising with SPY rather than away from it. IGV/SMH +14.34% over four weeks. The price rotation is real; the de-correlation that would corroborate it is not there."
+  },
+  {
+   "c": "SKYY",
+   "p": "XLK",
+   "rs1w": 1.96,
+   "rs4w": 14.2,
+   "rs3m": 12.53,
+   "shift": 0.18,
+   "a200": true,
+   "p200": 28.16,
+   "note": "Second-strongest 4-week in tech and it fails the screen on corr_shift +0.18. Same shape as IGV: cloud and software rising <i>with</i> SPY rather than away from it. Thin chain."
+  },
+  {
+   "c": "XBI",
+   "p": "XLV",
+   "rs1w": -2.49,
+   "rs4w": 3.48,
+   "rs3m": 17.09,
+   "shift": 0.03,
+   "a200": true,
+   "p200": 21.07,
+   "note": "<b>Highest RS_3mo in the universe at +17.09</b> and cooling on every shorter window. RS_4wk +5.14 → +3.48, RS_1wk −2.49, no de-correlation. Reads as: the three-month biotech trend is intact and the four-week impulse driving it has rolled over."
+  },
+  {
+   "c": "IHI",
+   "p": "XLV",
+   "rs1w": -2.21,
+   "rs4w": 0.92,
+   "rs3m": 11.02,
+   "shift": 0.3,
+   "a200": false,
+   "p200": -1.06,
+   "note": "Medical devices. RS_4wk +9.88 → <b>+0.92</b>, corr_shift +0.30, and it has dropped <b>below its 200-day</b>. The sharpest single deterioration in the healthcare complex this week."
+  },
+  {
+   "c": "PPH",
+   "p": "XLV",
+   "rs1w": -3.05,
+   "rs4w": -1.92,
+   "rs3m": 6.78,
+   "shift": 0.03,
+   "a200": true,
+   "p200": 7.56,
+   "note": "Pharma has gone outright negative on the 4-week leg with the worst short-window read in healthcare at −3.05. Of four healthcare children, one is still positive on the actionable window."
+  },
+  {
+   "c": "KRE",
+   "p": "XLF",
+   "rs1w": -1.22,
+   "rs4w": -5.84,
+   "rs3m": 5.04,
+   "shift": 0.3,
+   "a200": false,
+   "p200": -1.63,
+   "note": "Regional banks below the 50-day. <b>IV/HV 1.32 on an IV percentile of 0.5</b> — the widest implied-to-realised gap in the list on the lowest absolute percentile. That is realised vol collapsing faster than implied."
+  },
+  {
+   "c": "XOP",
+   "p": "XLE",
+   "rs1w": -2.37,
+   "rs4w": 2.6,
+   "rs3m": 11.68,
+   "shift": -0.06,
+   "a200": true,
+   "p200": 18.45,
+   "note": "Oil and gas E&amp;P. RS_4wk +2.60 with corr_shift −0.06, and RS_3mo +11.68 — the strongest trend anchor in energy."
+  },
+  {
+   "c": "TAN",
+   "p": "XLE",
+   "rs1w": -1.83,
+   "rs4w": -6.12,
+   "rs3m": -35.89,
+   "shift": 0.01,
+   "a200": false,
+   "p200": -11.79,
+   "note": "<b>RS_3mo −35.89, worst row in the universe by a distance.</b> Below both moving averages. Included as the counterweight to the energy-strength read: the sector is not moving as a bloc."
+  },
+  {
+   "c": "JETS",
+   "p": "XLI",
+   "rs1w": -1.79,
+   "rs4w": -11.62,
+   "rs3m": -2.18,
+   "shift": 0.14,
+   "a200": true,
+   "p200": 3.16,
+   "note": "Worst 4-week in the universe at −11.62, −7.1% under its 50-day. The weakest child of the sector with the second-worst parent."
+  }
+ ],
+ "subNote": "Sub-industry ETFs ranked by RS_4wk. A row tagged <b>+RS · de-correlating</b> has positive four-week relative strength against SPY <i>and</i> a negative correlation shift — outperforming while moving away from the index rather than with it. Thirteen of forty-four rows qualify this week: SIL, GDX, IBIT, COPX, XME, URA, OIH, LIT, XOP, XLE, XLK, IAI, XLY. Worth noting that the strongest of them are 15 to 21% above their own 50-day, so this describes where money has already gone, not where it is about to.",
+ "vol": [
+  {
+   "n": "KWEB",
+   "s": 26.32,
+   "iv": 25.65,
+   "p": 4.7,
+   "r": 1.11,
+   "em": 3.01,
+   "lane": "credit"
+  },
+  {
+   "n": "MAGS",
+   "s": 69.07,
+   "iv": 18.06,
+   "p": 0.0,
+   "r": 0.9,
+   "em": 5.56,
+   "lane": "debit"
+  },
+  {
+   "n": "XLE",
+   "s": 62.68,
+   "iv": 23.21,
+   "p": 50.7,
+   "r": 0.9,
+   "em": 6.48,
+   "lane": "debit"
+  },
+  {
+   "n": "KRE",
+   "s": 74.3,
+   "iv": 20.81,
+   "p": 0.5,
+   "r": 1.32,
+   "em": 6.89,
+   "lane": "credit"
+  },
+  {
+   "n": "EQT",
+   "s": 54.57,
+   "iv": 28.41,
+   "p": 4.9,
+   "r": 0.86,
+   "em": 6.91,
+   "lane": "debit"
+  },
+  {
+   "n": "IBIT",
+   "s": 43.9,
+   "iv": 37.01,
+   "p": 27.9,
+   "r": 1.01,
+   "em": 7.24,
+   "lane": "line"
+  },
+  {
+   "n": "SLV",
+   "s": 60.02,
+   "iv": 41.64,
+   "p": 50.4,
+   "r": 1.08,
+   "em": 11.13,
+   "lane": "credit"
+  },
+  {
+   "n": "UBER",
+   "s": 78.82,
+   "iv": 32.6,
+   "p": 12.1,
+   "r": 0.84,
+   "em": 11.44,
+   "lane": "debit"
+  },
+  {
+   "n": "GDX",
+   "s": 99.65,
+   "iv": 44.98,
+   "p": 68.5,
+   "r": 0.94,
+   "em": 19.96,
+   "lane": "debit"
+  },
+  {
+   "n": "SPY",
+   "s": 769.35,
+   "iv": 11.34,
+   "p": 2.2,
+   "r": 1.0,
+   "em": 38.86,
+   "lane": "line"
+  }
+ ],
+ "volNote": "<b>IV/HV</b> is implied vol divided by realised. Below 1.0 the market is pricing less movement than the stock has actually been delivering; above 1.0 the reverse; around 1.0 the two are level. <b>IV pctile</b> ranks current implied vol against its own 13-week history — the two can disagree, and GDX is this week's example at IV/HV 0.94 on a 68.5 percentile. <b>EM</b> is the expected move over a fixed horizon, in dollars. Note SPY at implied vol 11.34 on the 2.2nd percentile: index options are close to as cheap as they have been all year.",
+ "ratios": [
+  {
+   "n": "GDX/GLD",
+   "lvl": 0.24371,
+   "ma": 0.21275,
+   "chg": 19.71,
+   "r": "Miners over metal, +19.71% in four weeks and 14.6% above the 50-day. Read both legs: <b>GDX RS_4wk +26.06, GLD +4.68</b> — both positive, so this is not a falling-denominator artifact, but the gap is 21 points. Both legs decelerated this week while the ratio held, so the spread is persisting through the cooling. The caution is that miners are equities: this can be gold-demand or it can be equity beta wearing a monetary label."
+  },
+  {
+   "n": "IGV/SMH",
+   "lvl": 0.19797,
+   "ma": 0.16554,
+   "chg": 14.34,
+   "r": "+22.86% → +14.34%, still 19.6% above the 50-day. Legs: IGV +13.62, SMH −1.09. Software beating semis on price, without the de-correlation that would separate it from a general market move."
+  },
+  {
+   "n": "XLE/USO",
+   "lvl": 0.48327,
+   "ma": 0.48191,
+   "chg": 4.49,
+   "r": "Energy equities over crude, +4.49%, marginally above the 50-day. Legs: XLE +2.58, <b>USO −1.99</b>. Equities leading a falling commodity. WTI 83.38 Friday."
+  },
+  {
+   "n": "SLV/GLD",
+   "lvl": 0.14679,
+   "ma": 0.14397,
+   "chg": 3.48,
+   "r": "Silver over gold, +3.48%, above the 50-day. Both legs positive (SLV +8.46, GLD +4.68). Silver futures 70.56."
+  },
+  {
+   "n": "RSP/SPY",
+   "lvl": 0.28685,
+   "ma": 0.28682,
+   "chg": -1.22,
+   "r": "Breadth — the equal-weight index against the cap-weight one — <b>sitting exactly on its 50-day</b>, 0.28685 against 0.28682, a gap of 0.001%. −1.22% over four weeks. A ratio this close to its own moving average is not a signal in either direction."
+  },
+  {
+   "n": "MAGS/SMH",
+   "lvl": 0.12488,
+   "ma": 0.11419,
+   "chg": 5.28,
+   "r": "Mega-cap over semis, +5.28%, 9.4% above the 50-day. SMH is −5.1% under its 50-day while sitting +17.1% over the 200-day — semis correcting inside an intact longer trend."
+  },
+  {
+   "n": "KWEB/FXI",
+   "lvl": 0.7412,
+   "ma": 0.771,
+   "chg": -3.53,
+   "r": "<b>Below the 50-day and falling.</b> KWEB −9.93 v FXI −6.50 — China internet losing to its own broad-market parent, so this is not a China-beta problem."
+  },
+  {
+   "n": "TIP/IEF",
+   "lvl": 1.15175,
+   "ma": 1.15337,
+   "chg": -0.36,
+   "r": "Inflation-breakeven proxy, marginally below the 50-day. Both legs negative on the 4-week (TIP −4.47, IEF −4.12), so real and nominal duration are being sold together. Adds no independent information this week."
+  }
+ ],
+ "ratioNote": "Every ratio is read as two legs, never as a single line. A falling ratio can mean the numerator is weak or the denominator is strong, and those are opposite conclusions.",
+ "envread": {
+  "lean": "UNASSIGNED · PROVISIONAL",
+  "cards": [
+   {
+    "lab": "Regime lean",
+    "big": "UNASSIGNED",
+    "sub": "raw 3–1 · effective 2 after penalty · was CONFIRMED",
+    "clr": "dim"
+   },
+   {
+    "lab": "SPY implied vol",
+    "big": "11.34",
+    "sub": "2.2nd percentile · index options near yearly cheapest",
+    "clr": "pos"
+   },
+   {
+    "lab": "30Y Treasury",
+    "big": "5.19%",
+    "sub": "+0.37 over 20 days · highest since 2007 this month",
+    "clr": "neg"
+   },
+   {
+    "lab": "Screen fires",
+    "big": "13 / 44",
+    "sub": "RS_4wk > 0 and de-correlating from SPY",
+    "clr": "flow"
+   }
+  ],
+  "sentence": "Raw tally: fiscal-dominance 3 votes (rates, currency, commodities), expansion 1 (equity internals). Effective 2 after an independence penalty, because the 30-year yield is an input to two of the three fiscal votes and so is being counted twice. The threshold for a lean wants an effective 3 with a margin of 2, so <b>the system outputs UNASSIGNED and drops from CONFIRMED to PROVISIONAL</b>. The whole downgrade is one family flipping to abstain on a correlation reading that fell 0.0096 below a hard line — its trailing-10-year percentile is still 89.5, so the correlation regime has not left, it has stepped marginally off a threshold. The equity-internals family swung a full branch this week while failing its own independence test and voting on breadth alone; I would weight that vote low. The commodities vote carries a flag arguing the precious-metals move is equity beta rather than monetary demand. My read: the thesis is now <b>absent as context rather than contradicted</b>, which is a different thing from being wrong.",
+  "votes": [
+   {
+    "ind": "A · Curve & rates",
+    "says": "30Y 5.19% Friday close, 20-day change +0.37; 10Y ~4.67% after two up sessions; 2Y 4.24%. Long-led steepener, derived real yields +0.48 over 20 days",
+    "vote": "FISCAL DOMINANCE",
+    "clr": "flow"
+   },
+   {
+    "ind": "B · Currency",
+    "says": "UUP RS_4wk −6.04 → −3.59, improving; DXY 99.125, still above the sub-99 gate. Driven by the same 30Y series as A",
+    "vote": "FISCAL DOMINANCE (penalised — same impulse as A)",
+    "clr": "flow"
+   },
+   {
+    "ind": "C · Correlation",
+    "says": "SPY/TLT 60-day correlation 0.3078 → 0.286278, which is 0.0096 BELOW the 0.295619 threshold. Trailing-10-year percentile still 89.5",
+    "vote": "ABSTAIN — flipped this week, and this flip is the whole downgrade",
+    "clr": "dim"
+   },
+   {
+    "ind": "E · Equity internals",
+    "says": "Equal-weight/cap-weight above its 50-day by 0.001%; 9 of 11 sectors above their 200-day; XLP −3.75, XLV +0.94, XBI +3.48",
+    "vote": "EXPANSION — swung a full branch, on breadth alone",
+    "clr": "pos"
+   },
+   {
+    "ind": "F · Commodities",
+    "says": "GDX +26.06 v GLD +4.68; the ratio +19.71% fires a miner-beta flag; USO RS_4wk −1.99",
+    "vote": "FISCAL DOMINANCE · but flagged as equity beta",
+    "clr": "flow"
+   },
+   {
+    "ind": "D · Credit",
+    "says": "High-yield spreads ~275bp v 284bp late July, no widening trend; HY−IG differential ~190bp, tight end of the post-2009 range; HYG RS_4wk −3.39",
+    "vote": "NO VOTE — context only, by design",
+    "clr": "dim"
+   },
+   {
+    "ind": "Real yields (TIP/IEF)",
+    "says": "1.15175 v 50-day 1.15337 — 0.14% below the cross, both legs negative on the 4-week",
+    "vote": "No independent information this week",
+    "clr": "dim"
+   }
+  ]
+ },
+ "macro": [
+  {
+   "k": "Rates",
+   "v": "10Y 4.67% · 30Y 5.19% · 2Y 4.24% · 30Y−10Y ≈ 52bp",
+   "d": "Long-led bear steepener. Derived real yields +0.48 over 20 days. The long end has risen while the front has not, which is the shape associated with supply and inflation concern rather than with growth."
+  },
+  {
+   "k": "Volatility",
+   "v": "VIX 14.46 · SPY IV 11.34 at the 2.2nd percentile",
+   "d": "Index vol near its cheapest of the year, into a week where the Fed chair said policy is not restrictive and the market began pricing a hike."
+  },
+  {
+   "k": "Dollar",
+   "v": "DXY 99.125 · UUP RS_4wk −3.59",
+   "d": "Soft, but the softness is decaying rather than deepening. DXY has not closed below 99; Friday was 12bp above it."
+  },
+  {
+   "k": "Energy",
+   "v": "WTI 83.38 · XLE/USO +4.49% over 4wk",
+   "d": "Energy equities outperforming crude. Oil services (OIH +7.57) leading the sector while the commodity itself is negative on the 4-week."
+  },
+  {
+   "k": "Credit",
+   "v": "HY OAS ~275bp · HY−IG ~190bp",
+   "d": "No widening trend — 275bp against 284bp in late July and 269bp on 21 July. The high-yield to investment-grade differential is at the tight end of the post-2009 range. This is not stress, and it is not a risk-on confirmation either."
+  },
+  {
+   "k": "Inflation",
+   "v": "July PCE +0.2% m/m · 3.7% y/y",
+   "d": "Against +0.1% and 3.6% expected. An acceleration rather than a plateau, and the reason the long end has not settled."
+  }
+ ],
+ "checklist": [
+  "Credit spreads (high yield) starting to widen",
+  "PMIs / ISM rolling over",
+  "Oil-demand data softening",
+  "Energy equities de-coupling from a firm oil price"
+ ],
+ "checklistNote": "Four conditions being watched as a late-cycle handoff. None ticked this week — on item four, the energy equities are de-coupling but the oil price is not firm, so the condition does not cleanly apply.",
+ "history": [
+  {
+   "week": "2026-07-17",
+   "top3": [
+    "XLV",
+    "XLE",
+    "XLF"
+   ]
+  },
+  {
+   "week": "2026-07-24",
+   "top3": [
+    "XLE",
+    "XLV",
+    "XLF"
+   ]
+  },
+  {
+   "week": "2026-08-01",
+   "top3": [
+    "XLE",
+    "XLF",
+    "XLP"
+   ]
+  },
+  {
+   "week": "2026-08-08",
+   "top3": [
+    "XLB",
+    "XLE",
+    "XLF"
+   ]
+  },
+  {
+   "week": "2026-08-15",
+   "top3": [
+    "XLE",
+    "XLK",
+    "XLI"
+   ]
+  },
+  {
+   "week": "2026-08-22",
+   "top3": [
+    "XLY",
+    "XLV",
+    "XLE"
+   ]
+  },
+  {
+   "week": "2026-08-29",
+   "top3": [
+    "XLE",
+    "XLC",
+    "XLK"
+   ]
+  }
+ ],
+ "method": "Sector and sub-industry ETFs are ranked weekly on relative strength against SPY over three windows — 1 week as a tell only, 4 weeks as the actionable leg, 3 months as the trend anchor — alongside a correlation shift (20-day minus 60-day) that measures whether a group is moving away from the index or with it. Ratio pairs are always read as two legs. Implied vol is compared to realised to judge whether options are pricing more or less movement than the underlying has been delivering. Everything is close-basis; nothing here is an intraday read.",
+ "disclaimer": "Written for interest, not as advice. No positions, sizing or account information appears on this page, and nothing here is a recommendation to buy or sell anything. Numbers are as of the US close on the stated Friday and go stale quickly."
+}

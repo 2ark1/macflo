@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Weekly market read — 2026-10-16</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+:root{
+  --bg:#0b0d0c;--panel:#121514;--panel2:#181c1a;--line:rgba(255,255,255,.085);
+  --ink:#ECEAE3;--muted:#868d85;--dim:#5d635c;
+  --pos:#5DCAA5;--neg:#E2756B;--flow:#EFB45C;--accent:#6FD2B0;--info:#7FB2E8;--viol:#B79CE0;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg)}
+.wrap{font-family:'Hanken Grotesk','Helvetica Neue',Helvetica,Arial,system-ui,sans-serif;background:var(--bg);color:var(--ink);
+  padding:22px;max-width:960px;margin:0 auto;line-height:1.5}
+@media(max-width:600px){.wrap{padding:14px}}
+.mono{font-family:'IBM Plex Mono','SF Mono',Menlo,Consolas,'Liberation Mono',monospace;font-variant-numeric:tabular-nums}
+.top{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px;border-bottom:1px solid var(--line);padding-bottom:16px}
+.title{font-size:23px;font-weight:700;letter-spacing:-.01em;margin:0}
+.title small{display:block;font-size:11px;font-weight:500;color:var(--muted);letter-spacing:.2em;text-transform:uppercase;margin-bottom:6px}
+.wk{font-family:'IBM Plex Mono','SF Mono',Menlo,Consolas,'Liberation Mono',monospace;font-size:12px;color:var(--accent);text-align:right}
+.wk b{display:block;color:var(--ink);font-size:14px;font-weight:500}
+.sec{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:26px 0 12px;font-weight:600;display:flex;align-items:center;gap:8px}
+.sec::after{content:'';flex:1;height:1px;background:var(--line)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:13px 14px}
+.card .lab{font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--dim)}
+.card .big{font-family:'IBM Plex Mono','SF Mono',Menlo,Consolas,'Liberation Mono',monospace;font-size:20px;font-weight:600;margin-top:5px}
+.card .sub{font-size:11px;color:var(--muted);margin-top:2px}
+.pos{color:var(--pos)}.neg{color:var(--neg)}.flow{color:var(--flow)}.info{color:var(--info)}.dim{color:var(--dim)}
+.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;min-width:520px}
+th{font-size:10px;text-transform:uppercase;letter-spacing:.07em;color:var(--dim);font-weight:500;text-align:right;padding:0 0 8px;border-bottom:1px solid var(--line);white-space:nowrap}
+th.l,td.l{text-align:left}
+td{padding:8px 0;border-bottom:1px solid var(--line);font-size:13.5px;text-align:right}
+tr:last-child td{border-bottom:0}
+.tk{font-family:'IBM Plex Mono','SF Mono',Menlo,Consolas,'Liberation Mono',monospace;font-weight:600;font-size:13px}
+.nm{color:var(--muted);font-size:11.5px;margin-left:6px}
+.val{font-family:'IBM Plex Mono','SF Mono',Menlo,Consolas,'Liberation Mono',monospace;font-size:13px}
+.tag{font-size:10px;font-family:'IBM Plex Mono','SF Mono',Menlo,Consolas,'Liberation Mono',monospace;padding:2px 7px;border-radius:4px;white-space:nowrap}
+.t-flow{background:rgba(239,180,92,.16);color:var(--flow)}
+.t-div{background:rgba(127,178,232,.15);color:var(--info)}
+.t-lag{background:rgba(255,255,255,.05);color:var(--dim)}
+.t-win{background:rgba(93,202,165,.15);color:var(--pos)}
+.t-act{background:rgba(226,117,107,.16);color:var(--neg)}
+.t-hold{background:rgba(183,156,224,.16);color:var(--viol)}
+.note{font-size:12px;color:var(--muted);margin:8px 0 0;line-height:1.55}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin-bottom:10px}
+.flag{display:flex;align-items:flex-start;gap:10px;padding:9px 0;border-bottom:1px solid var(--line);font-size:13px}
+.flag:last-child{border-bottom:0}
+.dot{flex:none;width:9px;height:9px;border-radius:50%;margin-top:5px}
+.flag b{font-weight:600}
+.flag span{color:var(--muted);font-size:12px}
+.chk{display:flex;align-items:center;gap:10px;padding:7px 0;font-size:13px;color:var(--muted)}
+.box{flex:none;width:13px;height:13px;border:1px solid var(--line);border-radius:3px}
+.macrorow{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid var(--line);font-size:13px;flex-wrap:wrap}
+.macrorow:last-child{border-bottom:0}
+.macrorow .k{color:var(--ink);font-weight:600;font-size:13px}
+.macrorow .v{font-family:'IBM Plex Mono','SF Mono',Menlo,Consolas,'Liberation Mono',monospace;font-size:12px;color:var(--accent)}
+.macrorow .d{flex-basis:100%;color:var(--muted);font-size:12px;line-height:1.55}
+.foot{margin-top:26px;border-top:1px solid var(--line);padding-top:14px;font-size:12px;color:var(--muted);line-height:1.6}
+.foot b{color:var(--ink);font-weight:500}
+.stale{background:rgba(239,180,92,.14);border:1px solid rgba(239,180,92,.4);color:var(--flow);border-radius:9px;padding:11px 14px;margin:18px 0 0;font-size:13px;line-height:1.5}
+.gl{padding:10px 0;border-bottom:1px solid var(--line);font-size:13px}
+.gl:last-child{border-bottom:0}
+.gl b{font-weight:600}
+.gl.cur{background:rgba(239,180,92,.07);margin:0 -8px;padding:10px 8px;border-radius:6px}
+.gl .now{font-size:10px;font-family:'IBM Plex Mono',monospace;background:rgba(239,180,92,.18);color:var(--flow);padding:2px 7px;border-radius:4px;margin-left:8px}
+.gl p{margin:4px 0 0;color:var(--muted);font-size:12.5px;line-height:1.55}
+.hist{font-family:'IBM Plex Mono','SF Mono',Menlo,Consolas,'Liberation Mono',monospace;font-size:11px;color:var(--dim);margin-top:8px}
+.wow{font-family:'IBM Plex Mono','SF Mono',Menlo,Consolas,'Liberation Mono',monospace;font-size:11px;color:var(--dim);margin-left:6px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <h1 class="title"><small>weekly market read</small>Sector flow, relative strength and macro</h1>
+    <div class="wk"><b id="wkLabel">week of —</b><span id="wkSrc"></span></div>
+  </div>
+
+  <div id="staleBar"></div>
+
+  <div class="sec">This week</div>
+  <div class="panel" id="lede"></div>
+
+  <div class="sec">Environment</div>
+  <div class="cards" id="envCards"></div>
+  <div class="panel" style="margin-top:10px" id="envPanel"></div>
+  <div class="scroll"><table>
+    <thead><tr><th class="l">Family</th><th class="l">Reads</th><th class="l">Vote</th></tr></thead>
+    <tbody id="voteBody"></tbody>
+  </table></div>
+
+  <div class="sec">What the regimes mean</div>
+  <div class="panel" id="glossary"></div>
+  <p class="note" id="glossaryNote"></p>
+
+  <div class="sec">Sector flow</div>
+  <div class="scroll"><table>
+    <thead><tr><th class="l">Sector</th><th>RS 1w</th><th>RS 4w</th><th>RS 3m</th><th>corr shift</th><th>v 200d</th><th class="l">Read</th></tr></thead>
+    <tbody id="secBody"></tbody>
+  </table></div>
+  <p class="note" id="secNote"></p>
+
+  <div class="sec">Sub-industry</div>
+  <div class="scroll"><table>
+    <thead><tr><th class="l">ETF</th><th>RS 1w</th><th>RS 4w</th><th>RS 3m</th><th>corr shift</th><th>v 200d</th><th class="l" id="subHd"></th></tr></thead>
+    <tbody id="subBody"></tbody>
+  </table></div>
+  <p class="note" id="subNote"></p>
+
+  <div class="sec">Volatility &amp; expected move</div>
+  <div class="scroll"><table>
+    <thead><tr><th class="l">Name</th><th>Spot</th><th>IV</th><th>IV pctile</th><th>IV/HV</th><th>Exp. move</th><th class="l" id="laneHd"></th></tr></thead>
+    <tbody id="volBody"></tbody>
+  </table></div>
+  <p class="note" id="volNote"></p>
+
+  <div class="sec">Ratio pairs</div>
+  <div class="scroll"><table>
+    <thead><tr><th class="l">Pair</th><th>Level</th><th>50d</th><th>4wk %</th><th class="l">Read</th></tr></thead>
+    <tbody id="ratioBody"></tbody>
+  </table></div>
+  <p class="note" id="ratioNote"></p>
+
+  <div class="sec">Macro</div>
+  <div class="panel" id="macroPanel"></div>
+
+  <div class="sec">Watching for</div>
+  <div class="panel" id="checklist"></div>
+  <p class="note" id="checklistNote"></p>
+
+  <div class="foot">
+    <b>Method.</b> <span id="method"></span>
+    <div style="margin-top:10px" id="dataDate"></div>
+    <div style="margin-top:10px" id="disclaimer"></div>
+    <div class="hist" id="histLine"></div>
+  </div>
+</div>
+
+<script>
+const D = {"week":"2026-10-16","src":"Marks as of US close 16 Oct 2026. 501 daily bars, 44 relative-strength rows across a 45-symbol universe. Bid/ask unavailable on a weekend pull, so every price here is a close, a last or a settlement mark. The 10-year yield and CPI figures are from public reports dated 14 October. High-yield spreads are from FRED, latest value 15 October. Oil, the dollar index and VIX levels were not sourced this week.","lede":[{"st":"act","h":"Leadership turned over in one week: technology out, energy and defensives in","s":"Last week four rows fired the screen, all of them software, cyber or semis. This week <b>seven fire and none of them is technology</b>: energy, oil producers, staples, health care, materials, retail and insurance. Technology fell from first to last among sectors on four weeks (+4.58 to <b>−2.53</b>). Cybersecurity's four-week reading went from +14.08 to −2.88. One week is a tell, not a trend, but the turnover is unusually complete."},{"st":"warn","h":"A hot inflation print, and long yields back near their highs","s":"September CPI rose 0.6% on the month, with core at 0.3% and 2.6% over the year, above the 2.5% expected. The 10-year rose about 9bp to roughly <b>5.30%</b> on the day. The next Fed decision is about two weeks out. This page has no view on it; it is listed because short-dated yields respond to it."},{"st":"hold","h":"Breadth improved, because the largest stocks fell","s":"Equal-weight against cap-weight moved from −2.72% to <b>+0.28%</b> over four weeks. Six of eleven sectors are above their 200-day, up from four. Thirteen of forty-four rows beat the index on four weeks, up from ten. The average stock did not rally much: SPY itself is 0.7% below its 50-day."},{"st":"warn","h":"High-yield spreads widened again","s":"High-yield spreads were <b>323bp</b> on 15 October, against 311bp on 9 October and 265bp on 1 September. They touched 325bp on 14 October, the day of the inflation print. Last week's pause did not hold."},{"st":"warn","h":"The regime vote turned over again: fiscal dominance now leads, still no label","s":"The share/bond correlation family voted for the first time, after 22 consecutive sessions above its threshold, and it votes <b>fiscal dominance</b>. Equity internals still votes the same way. Commodities moved to <b>late-cycle hot</b>; rates and currency abstained. That is 2–1 again, for a sixth week, but for a different regime than last week's 2–1 for expansion. Two weeks, two different majorities, no label either time."}],"sectors":[{"c":"XLE","n":"Energy","rs1w":6.83,"rs4w":5.74,"rs3m":14.93,"shift":-0.2,"a200":true,"p200":18.44,"sig":"div"},{"c":"XLP","n":"Cons Staples","rs1w":6.99,"rs4w":4.86,"rs3m":0.4,"shift":-0.21,"a200":true,"p200":4.31,"sig":"div"},{"c":"XLV","n":"Health Care","rs1w":5.42,"rs4w":4.59,"rs3m":8.11,"shift":-0.02,"a200":true,"p200":12.19,"sig":"div"},{"c":"XLU","n":"Utilities","rs1w":3.9,"rs4w":1.16,"rs3m":-8.92,"shift":0.01,"a200":false,"p200":-4.74,"sig":"flow"},{"c":"XLY","n":"Cons Disc","rs1w":1.62,"rs4w":0.87,"rs3m":-4.73,"shift":0.15,"a200":false,"p200":-2.96,"sig":"flow"},{"c":"XLB","n":"Materials","rs1w":4.98,"rs4w":0.32,"rs3m":-1.07,"shift":-0.14,"a200":true,"p200":0.11,"sig":"div"},{"c":"XLF","n":"Financials","rs1w":3.41,"rs4w":-0.73,"rs3m":-3.78,"shift":-0.17,"a200":true,"p200":3.42,"sig":"lag"},{"c":"XLI","n":"Industrials","rs1w":1.09,"rs4w":-0.83,"rs3m":-8.67,"shift":-0.19,"a200":false,"p200":-3.01,"sig":"lag"},{"c":"XLC","n":"Comm Svcs","rs1w":1.92,"rs4w":-1.9,"rs3m":-3.28,"shift":0.26,"a200":false,"p200":-2.8,"sig":"lag"},{"c":"XLRE","n":"Real Estate","rs1w":3.29,"rs4w":-1.91,"rs3m":-9.64,"shift":0.12,"a200":false,"p200":-2.51,"sig":"lag"},{"c":"XLK","n":"Technology","rs1w":-5.73,"rs4w":-2.53,"rs3m":1.57,"shift":0.06,"a200":true,"p200":9.53,"sig":"lag"}],"secNote":"Ranked by RS_4wk, the actionable window. <b>corr_shift</b> is 20-day correlation to SPY minus 60-day: negative means the sector is moving away from the index rather than with it. A sector that is both outperforming and de-correlating is the shape that suggests money is being allocated to it rather than the whole market rising together. <b>Four sectors qualify this week: energy, staples, health care and materials.</b> Last week none did. Technology is last at −2.53.","subind":[{"c":"IBIT","p":"CRYPTO","rs1w":1.11,"rs4w":6.49,"rs3m":22.25,"shift":0.42,"a200":true,"p200":10.41,"note":"Bitcoin. +6.49 on four weeks and +22.25 on three months. Correlation shift +0.42, the most index-coupled row on the page."},{"c":"XRT","p":"XLY","rs1w":5.45,"rs4w":4.98,"rs3m":-5.01,"shift":-0.01,"a200":true,"p200":1.63,"note":"Retail. +4.98 on four weeks, correlation shift −0.01. Fires, but only just, and the three-month is still −5.01."},{"c":"XOP","p":"XLE","rs1w":6.6,"rs4w":3.95,"rs3m":14.99,"shift":-0.11,"a200":true,"p200":19.96,"note":"Oil and gas producers. +3.95 on four weeks and de-correlating at −0.11; three-month +14.99, 20.0% over the 200-day. Fires the screen alongside its parent sector."},{"c":"IHI","p":"XLV","rs1w":5.84,"rs4w":3.86,"rs3m":3.4,"shift":0.09,"a200":false,"p200":-0.44,"note":"Medical devices. +3.86 on four weeks, still 0.4% below the 200-day."},{"c":"PPH","p":"XLV","rs1w":5.52,"rs4w":2.36,"rs3m":3.17,"shift":0.01,"a200":true,"p200":6.56,"note":"Pharmaceuticals. +2.36 on four weeks, correlation shift +0.01: outperforming, but moving with the index."},{"c":"KIE","p":"XLF","rs1w":6.15,"rs4w":0.18,"rs3m":-5.22,"shift":-0.17,"a200":true,"p200":5.31,"note":"Insurance. +0.18 on four weeks with a correlation shift of −0.17. The smallest positive reading that still qualifies."},{"c":"IGV","p":"XLK","rs1w":-5.42,"rs4w":-1.45,"rs3m":9.37,"shift":0.13,"a200":true,"p200":11.32,"note":"Software. −1.45 on four weeks, from +8.59. Still 11.3% above the 200-day."},{"c":"CIBR","p":"XLK","rs1w":-8.19,"rs4w":-2.88,"rs3m":4.81,"shift":0.12,"a200":true,"p200":21.12,"note":"Cybersecurity. −2.88 on four weeks, from +14.08 a week ago, and −8.19 on one week. Still 21.1% over the 200-day."},{"c":"SKYY","p":"XLK","rs1w":-7.39,"rs4w":-3.67,"rs3m":13.14,"shift":0.12,"a200":true,"p200":17.72,"note":"Cloud infrastructure. −3.67 on four weeks, from +8.93. One-week −7.39."},{"c":"SMH","p":"XLK","rs1w":-8.56,"rs4w":-3.8,"rs3m":-6.26,"shift":0.11,"a200":true,"p200":5.56,"note":"Semiconductors. −3.80 on four weeks and −8.56 on one week; 6.8% below its 50-day."},{"c":"OIH","p":"XLE","rs1w":0.31,"rs4w":-4.69,"rs3m":-0.98,"shift":-0.04,"a200":false,"p200":-2.82,"note":"Oil services. −4.69 on four weeks and 2.8% below the 200-day. Producers are leading; services are not."},{"c":"GDX","p":"XLB","rs1w":0.21,"rs4w":-8.65,"rs3m":21.14,"shift":0.01,"a200":false,"p200":-3.67,"note":"Gold miners. −8.65 on four weeks, 3.7% below the 200-day. Three-month +21.14."},{"c":"XBI","p":"XLV","rs1w":-4.18,"rs4w":-8.89,"rs3m":-7.24,"shift":-0.04,"a200":true,"p200":2.97,"note":"Biotech. −8.89 on four weeks while health care leads: the sector's strength is in large pharma, not biotech."},{"c":"TAN","p":"XLE","rs1w":-2.37,"rs4w":-9.82,"rs3m":-23.42,"shift":0.01,"a200":false,"p200":-23.31,"note":"Solar. −23.42 on three months, the weakest trend anchor, 23.3% below the 200-day."},{"c":"SIL","p":"XLB","rs1w":-3.04,"rs4w":-13.26,"rs3m":12.68,"shift":-0.0,"a200":false,"p200":-9.58,"note":"Silver miners. −13.26, the second-weakest four-week reading, 9.6% below the 200-day."},{"c":"URA","p":"XLE","rs1w":-6.95,"rs4w":-17.08,"rs3m":-11.23,"shift":0.12,"a200":false,"p200":-25.9,"note":"Uranium. −17.08, the weakest four-week reading in the universe, 25.9% below the 200-day."}],"subNote":"Sub-industry ETFs ranked by RS_4wk. A row tagged <b>+RS · de-correlating</b> has positive four-week relative strength against SPY <i>and</i> a negative correlation shift. Seven of forty-four rows qualify: XLE, XOP, XLP, XLV, XRT, XLB, KIE. Last week's four (CIBR, SKYY, IGV, SMH) all dropped out, each now negative on four weeks. The weakest rows are uranium, silver miners and solar.","vol":[{"n":"KWEB","s":24.41,"iv":27.49,"p":14.8,"r":1.29,"em":2.99,"lane":"credit"},{"n":"IBIT","s":46.15,"iv":37.19,"p":36.2,"r":1.04,"em":7.64,"lane":"line"},{"n":"KRE","s":69.81,"iv":24.63,"p":34.2,"r":1.27,"em":7.66,"lane":"credit"},{"n":"SLV","s":51.51,"iv":35.04,"p":36.4,"r":0.89,"em":8.04,"lane":"debit"},{"n":"XLE","s":68.24,"iv":26.49,"p":76.2,"r":1.13,"em":8.05,"lane":"credit"},{"n":"MAGS","s":71.28,"iv":25.91,"p":68.2,"r":1.57,"em":8.22,"lane":"credit"},{"n":"GDX","s":87.71,"iv":40.77,"p":39.7,"r":0.97,"em":15.92,"lane":"line"},{"n":"SPY","s":763.25,"iv":14.41,"p":63.6,"r":1.39,"em":48.98,"lane":"credit"}],"volNote":"<b>IV/HV</b> is implied vol divided by realised. Below 1.0 the market is pricing less movement than the underlying has been delivering; above 1.0 the reverse; around 1.0 the two are level. <b>IV pctile</b> ranks current implied vol against its own one-year history. <b>EM</b> is the expected move over a fixed horizon, in dollars. SPY implied vol is 14.41, the 63.6th percentile of its year, up sharply from the bottom of the range a week ago. Index options are now pricing about 1.4 times the movement SPY has delivered over 30 days.","ratios":[{"n":"XLE/USO","lvl":0.42186,"ma":0.44736,"chg":1.61,"r":"Energy equities against crude, +1.61% over four weeks but still below the 50-day. Legs: XLE +5.74, USO +4.06. Both positive this time, and close together: shares and oil rallied in step."},{"n":"RSP/SPY","lvl":0.2805,"ma":0.28086,"chg":0.28,"r":"<b>Equal-weight against cap-weight, +0.28% over four weeks</b>, from −2.72% a week ago, and just under the 50-day. Legs: RSP +0.28 against SPY. The average stock caught up as the large tech names fell."},{"n":"IGV/SMH","lvl":0.1933,"ma":0.18315,"chg":2.44,"r":"Software over semis, +2.44% and above the 50-day. Legs: IGV −1.45, SMH −3.80. Both negative: software is rising only because semis fell harder."},{"n":"MAGS/SMH","lvl":0.13205,"ma":0.12154,"chg":4.59,"r":"Megacap tech over semis, +4.59% and above the 50-day. Legs: MAGS +0.62, SMH −3.80. Megacaps held; semis led the decline."},{"n":"GDX/GLD","lvl":0.2296,"ma":0.23509,"chg":-4.65,"r":"Miners over metal, −4.65% and below the 50-day. Legs: GDX −8.65, GLD −4.19. Both negative, miners falling harder."},{"n":"SLV/GLD","lvl":0.13484,"ma":0.14536,"chg":-8.91,"r":"Silver over gold, −8.91% and below the 50-day. Legs: SLV −12.74, GLD −4.19. Both negative; silver is falling about three times as hard."},{"n":"TIP/IEF","lvl":1.16722,"ma":1.15977,"chg":0.76,"r":"Inflation-breakeven proxy, +0.76% and above the 50-day. Legs: TIP −0.25, IEF −1.00. Both negative; inflation-linked bonds falling less, in a week with a hot headline CPI."},{"n":"KWEB/FXI","lvl":0.72134,"ma":0.73423,"chg":1.08,"r":"China internet over the broad China index, +1.08% but below the 50-day. Legs: KWEB −0.05, FXI −1.11. Both slightly negative."}],"ratioNote":"Every ratio is read as two legs, never as a single line. A rising ratio can mean the numerator is strong or the denominator is weak, and those are opposite conclusions. This week's illustration is IGV/SMH: up 2.44%, with both legs negative. Software did not rally. Semis fell harder.","envread":{"lean":"UNASSIGNED","cards":[{"lab":"Regime lean","big":"UNASSIGNED","sub":"raw 2–1 · sixth week · fiscal dominance 2, late-cycle hot 1","clr":"dim"},{"lab":"HY credit spread","big":"323bp","sub":"15 Oct · +12bp from 9 Oct · +58bp since 1 Sep","clr":"neg"},{"lab":"Shares/bonds correlation","big":"0.388","sub":"60-day · 96.6th pct of 10 years · streak 22/21","clr":"neg"},{"lab":"Screen fires","big":"7 / 44","sub":"RS_4wk > 0 and de-correlating from SPY","clr":"flow"}],"sentence":"Raw tally: fiscal dominance 2 (correlation, equity internals), late-cycle hot 1 (commodities). Rates and currency abstained. Two to one is not enough for a label, so the system assigns none, for the sixth week. The change is in who votes: the correlation family cleared its persistence test and voted for the first time, and both rates families that read expansion last week now abstain. Commodities moved from expansion to late-cycle hot as crude's four-week lead turned positive again while the metals stayed weak. The output prints no reason line for the commodities vote, so that link is my read of its inputs, not confirmed from the code.","votes":[{"ind":"A · Curve & rates","says":"No steepener signal; derived real yields +0.12 over 20 days (from +0.29)","vote":"ABSTAIN — changed from expansion","clr":"dim"},{"ind":"B · Currency","says":"UUP RS_4wk 0.79 → 1.81; 30Y 20-day change +0.14; no structural flag","vote":"ABSTAIN","clr":"dim"},{"ind":"C · Correlation","says":"SPY/TLT 60-day correlation 0.426 → 0.388. Above the full-history 95th percentile of 0.297 and the trailing-ten-year threshold of 0.361, at the 96.6th percentile. Calibrations agree. Streak 22 of 21 sessions","vote":"FISCAL DOMINANCE — first vote","clr":"flow"},{"ind":"E · Equity internals","says":"Equal-weight below its 50-day; 6 of 11 sectors above their 200-day; staples +4.86, health care +4.59, biotech −8.89, utilities +1.16, real estate −1.91; XBI/XLV spread −13.48 fails the independence test; the family reports independent cyclical evidence","vote":"FISCAL DOMINANCE — failing its own independence check","clr":"flow"},{"ind":"F · Commodities","says":"USO +4.06 on four weeks, +26.03 on three months; GDX −8.65, SIL −13.26, COPX −7.75, GLD −4.19. Gold-decoupling and miner-beta flags both clear","vote":"LATE-CYCLE HOT — changed from expansion","clr":"flow"},{"ind":"D · Credit","says":"High-yield OAS 323bp at 15 October, from 311bp on 9 October and 265bp on 1 September","vote":"NO VOTE — context only, by design","clr":"dim"},{"ind":"Independence note","says":"The 30-year yield is an input to both the rates and currency families. Both abstained, so nothing was deducted","vote":"No penalty applied — for a structural reason","clr":"dim"}]},"glossary":[{"name":"Unassigned","current":true,"plain":"Not a state of the world — a state of the evidence. It means the indicators disagreed enough that no single label was justified. This week two families read government borrowing driving rates and one reads an economy running hot. Last week a different two read a normal expansion. A majority that changes hands from week to week is exactly the case the system is built not to label."},{"name":"Fiscal dominance","current":false,"plain":"Government borrowing, rather than the central bank, sets the tone for interest rates. Long-term borrowing costs rise because there is a lot of government debt to sell and buyers want more compensation to hold it. The practical consequence: government bonds stop protecting a share portfolio, because both fall on the same news. Anyone with an ordinary superannuation or pension balance holds that mix."},{"name":"Late cycle, hot","current":false,"plain":"Growth is still strong but running above what the economy can sustain. Inflation pressure builds and the central bank leans against it with rate rises, which pushes short-term yields up fastest. Commodities and companies with pricing power usually do better than the fast-growing names that led earlier."},{"name":"Expansion","current":false,"plain":"The ordinary good state. Growth is solid, inflation is contained, and company earnings are rising. Shares generally do well, and bonds behave the way most people expect — providing a cushion when shares fall."},{"name":"Stagflation","current":false,"plain":"Weak growth alongside high inflation. There is no obvious hiding place, because the policies that would help one problem make the other worse. Historically hard on both shares and bonds at the same time."},{"name":"Deflationary recession","current":false,"plain":"Demand falls away and prices with it. Growth turns negative and inflation drops below target. This is the state in which government bonds work best — the central bank cuts rates hard, and safe assets rise while shares fall."}],"glossaryNote":"The system runs six independent families of indicators — interest rates, currencies, the correlation between shares and bonds, credit markets, share-market internals, and commodities — and each votes for a regime or abstains. A label is only assigned when enough of them agree and their evidence is genuinely independent of each other. <b>Two families reading the same underlying number get counted once, not twice.</b> This week three families voted, two for fiscal dominance and one for late-cycle hot. Two to one is not enough agreement, so no label was assigned.","macro":[{"k":"Rates","v":"10Y ~5.30% (14 Oct)","d":"Up about 9bp on the CPI day, back near the highest levels since 2002. The 2-year was not sourced this week."},{"k":"Inflation","v":"Sep CPI +0.6% m/m · core +0.3%, 2.6% y/y","d":"Headline in line with forecasts, core above them. Energy did most of the work: gasoline rose 9.1% on the month."},{"k":"Fed","v":"Next decision ~28 Oct","d":"This page has no view on the decision; it is listed because short-dated yields respond to it."},{"k":"Credit","v":"HY OAS 323bp at 15 October","d":"Up from 311bp on 9 October, with a peak of 325bp on 14 October. 58bp above the 1 September level. The widening resumed."},{"k":"Volatility","v":"SPY IV 14.41, 63.6th pct","d":"Index implied vol rose from near the bottom of its one-year range to the upper half in one week. VIX was not sourced."},{"k":"Energy","v":"USO +4.06 4wk · 35.6% over 200-day","d":"Crude regained its lead over the index after one negative week. Energy shares and crude rose together; oil services did not join."},{"k":"Metals","v":"GLD 382.01 · SLV −12.74 4wk","d":"Gold 7.9% below its 200-day, silver 21.2% below. Gold and silver miners both below their 200-day."},{"k":"Dollar","v":"UUP RS_4wk +1.81","d":"The dollar proxy's lead widened from +0.79 and it remains above its 50- and 200-day. DXY not sourced."}],"checklist":["Energy equities de-coupling from a firm oil price","PMIs / ISM rolling over","Credit spreads (high yield) starting to widen","Oil-demand data softening"],"checklistNote":"Four conditions watched as a late-cycle handoff. <b>Item one does not tick</b>: energy shares and crude rose together this week (XLE +5.74, USO +4.06). <b>Item three ticks</b>: high-yield OAS 323bp, up 12bp on the week and 58bp since 1 September. One of four ticks. Items two and four were not re-checked against fresh data.","history":[{"week":"2026-07-17","top3":["XLV","XLE","XLF"]},{"week":"2026-07-24","top3":["XLE","XLV","XLF"]},{"week":"2026-08-01","top3":["XLE","XLF","XLP"]},{"week":"2026-08-08","top3":["XLB","XLE","XLF"]},{"week":"2026-08-15","top3":["XLE","XLK","XLI"]},{"week":"2026-08-22","top3":["XLY","XLV","XLE"]},{"week":"2026-08-29","top3":["XLE","XLC","XLK"]},{"week":"2026-09-04","top3":["XLE","XLV","XLK"]},{"week":"2026-09-11","top3":["XLE","XLC","XLK"]},{"week":"2026-09-18","top3":["XLK","XLE","XLC"]},{"week":"2026-09-25","top3":["XLK","XLC","XLE"]},{"week":"2026-10-02","top3":["XLK","XLI","XLC"]},{"week":"2026-10-09","top3":["XLK","XLV","XLY"]},{"week":"2026-10-16","top3":["XLE","XLP","XLV"]}],"method":"Sector and sub-industry ETFs are ranked weekly on relative strength against SPY over three windows — 1 week as a tell only, 4 weeks as the actionable leg, 3 months as the trend anchor — alongside a correlation shift (20-day minus 60-day) measuring whether a group is moving away from the index or with it. Ratio pairs are always read as two legs. Implied vol is compared to realised to judge whether options are pricing more or less movement than the underlying has been delivering. The regime panel is a separate voting system across six indicator families and is treated as context, never as an instruction. Everything is close-basis; nothing here is an intraday read. When a fault is found in the underlying data, the correction is published alongside the new reading and the affected archive page is left unaltered.","disclaimer":"Written for interest, not as advice. No positions, sizing or account information appears on this page, and nothing here is a recommendation to buy or sell anything. Numbers are as of the US close on the stated Friday and go stale quickly."};
+const SHOW_SCREEN = true;
+const SHOW_LANE = true;
+
+const SIG={flow:["receiving flow","t-flow"],div:["diversifier · −corr","t-div"],lag:["lagging SPY","t-lag"]};
+const DOT={ok:"var(--pos)",warn:"var(--flow)",act:"var(--neg)",hold:"var(--viol)"};
+const LANE={debit:["implied &lt; realised","t-win"],credit:["implied &gt; realised","t-act"],line:["on the line","t-lag"]};
+const n2=(v,d)=>v===null||v===undefined?"·":(v>0?"+":"")+v.toFixed(d===undefined?2:d);
+const cls=v=>v===null||v===undefined?"dim":(v>0?"pos":(v<0?"neg":""));
+
+function render(){
+ document.getElementById("wkLabel").textContent="week of "+D.week;
+ document.getElementById("wkSrc").textContent="close basis";
+
+ // Staleness: a failed weekly run leaves the last page up with no other tell.
+ const age=Math.floor((Date.now()-Date.parse(D.week+"T00:00:00Z"))/864e5);
+ document.getElementById("staleBar").innerHTML = age>10
+  ? `<div class="stale">This page has not updated in ${age} days. It last refreshed on ${D.week}, so every number below is at least that old and the market has moved since.</div>`
+  : "";
+
+ document.getElementById("lede").innerHTML=D.lede.map(o=>
+  `<div class="flag"><div class="dot" style="background:${DOT[o.st]||DOT.ok}"></div><div><b>${o.h}</b><br><span>${o.s}</span></div></div>`).join("");
+
+ document.getElementById("envCards").innerHTML=D.envread.cards.map(c=>
+  `<div class="card"><div class="lab">${c.lab}</div><div class="big ${c.clr||""}">${c.big}</div><div class="sub">${c.sub}</div></div>`).join("");
+ document.getElementById("envPanel").innerHTML=`<div style="font-size:13px;line-height:1.6">${D.envread.sentence}</div>`;
+ document.getElementById("voteBody").innerHTML=D.envread.votes.map(v=>
+  `<tr><td class="l"><b>${v.ind}</b></td><td class="l" style="color:var(--muted);font-size:12px">${v.says}</td><td class="l ${v.clr||""}" style="font-size:12px">${v.vote}</td></tr>`).join("");
+
+ const sorted=[...D.sectors].sort((a,b)=>b.rs4w-a.rs4w);
+ document.getElementById("secBody").innerHTML=sorted.map(x=>{
+  const sg=SIG[x.sig];
+  return `<tr><td class="l"><span class="tk">${x.c}</span><span class="nm">${x.n}</span></td>
+   <td class="val ${cls(x.rs1w)}">${n2(x.rs1w)}</td><td class="val ${cls(x.rs4w)}">${n2(x.rs4w)}</td>
+   <td class="val ${cls(x.rs3m)}">${n2(x.rs3m)}</td><td class="val ${x.shift<0?'info':'dim'}">${n2(x.shift)}</td>
+   <td class="val ${cls(x.p200)}">${n2(x.p200,1)}%</td>
+   <td class="l"><span class="tag ${sg[1]}">${sg[0]}</span></td></tr>`;}).join("");
+ document.getElementById("secNote").innerHTML=D.secNote;
+
+ document.getElementById("glossary").innerHTML=(D.glossary||[]).map(g=>
+  `<div class="gl${g.current?" cur":""}"><b>${g.name}</b>${g.current?'<span class="now">this week</span>':""}<p>${g.plain}</p></div>`).join("");
+ document.getElementById("glossaryNote").innerHTML=D.glossaryNote||"";
+
+ document.getElementById("subBody").innerHTML=D.subind.map(x=>{
+  const fires=x.rs4w>0&&x.shift<0;
+  const sg=fires?["+RS · de-correlating","t-div"]:(x.rs4w>0?["positive RS","t-flow"]:["lagging","t-lag"]);
+  return `<tr><td class="l"><span class="tk">${x.c}</span><span class="nm">${x.p}</span></td>
+   <td class="val ${cls(x.rs1w)}">${n2(x.rs1w)}</td><td class="val ${cls(x.rs4w)}">${n2(x.rs4w)}</td>
+   <td class="val ${cls(x.rs3m)}">${n2(x.rs3m)}</td><td class="val ${x.shift<0?'info':'dim'}">${n2(x.shift)}</td>
+   <td class="val ${cls(x.p200)}">${n2(x.p200,1)}%</td>
+   <td class="l">${SHOW_SCREEN?`<span class="tag `+sg[1]+`">`+sg[0]+`</span>`:""}</td></tr>
+   <tr><td colspan="7" class="l" style="border-bottom:1px solid var(--line);padding-top:0"><span class="note">${x.note}</span></td></tr>`;}).join("");
+ document.getElementById("subHd").textContent=SHOW_SCREEN?"Screen":"";
+ document.getElementById("subNote").innerHTML=D.subNote;
+
+ document.getElementById("volBody").innerHTML=D.vol.map(x=>{
+  return `<tr><td class="l"><span class="tk">${x.n}</span></td>
+   <td class="val">${x.s.toFixed(2)}</td><td class="val">${x.iv.toFixed(2)}</td>
+   <td class="val ${x.p<20?'pos':(x.p>65?'neg':'')}">${x.p.toFixed(1)}</td>
+   <td class="val ${x.r<1?'pos':(x.r>1?'neg':'')}">${x.r.toFixed(2)}</td>
+   <td class="val">${x.em.toFixed(2)}</td>
+   <td class="l">${SHOW_LANE&&LANE[x.lane]?`<span class="tag `+LANE[x.lane][1]+`">`+LANE[x.lane][0]+`</span>`:""}</td></tr>`;}).join("");
+ document.getElementById("laneHd").textContent=SHOW_LANE?"Implied v realised":"";
+ document.getElementById("volNote").innerHTML=D.volNote;
+
+ document.getElementById("ratioBody").innerHTML=D.ratios.map(x=>{
+  const above=x.lvl>x.ma;
+  return `<tr><td class="l"><span class="tk">${x.n}</span></td>
+   <td class="val ${above?'pos':'neg'}">${x.lvl.toFixed(5)}</td><td class="val dim">${x.ma.toFixed(5)}</td>
+   <td class="val ${cls(x.chg)}">${n2(x.chg)}%</td>
+   <td class="l"><span class="note">${x.r}</span></td></tr>`;}).join("");
+ document.getElementById("ratioNote").innerHTML=D.ratioNote;
+
+ document.getElementById("macroPanel").innerHTML=D.macro.map(m=>
+  `<div class="macrorow"><span class="k">${m.k}</span><span class="v">${m.v}</span><span class="d">${m.d}</span></div>`).join("");
+
+ document.getElementById("checklist").innerHTML=D.checklist.map(c=>
+  `<div class="chk"><span class="box"></span>${c}</div>`).join("");
+ document.getElementById("checklistNote").innerHTML=D.checklistNote;
+
+ document.getElementById("method").innerHTML=D.method;
+ document.getElementById("dataDate").innerHTML="<b>Data as of the US close on "+D.week+".</b> Refreshed weekly after the Friday close.";
+ document.getElementById("disclaimer").innerHTML=D.disclaimer;
+ document.getElementById("histLine").textContent="top 3 by RS_4wk — "+D.history.map(h=>h.week.slice(5)+" "+h.top3.join("/")).join("  ·  ");
+}
+render();
+</script>
+</body>
+</html>

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Weekly market read — 2026-11-20</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+:root{
+  --bg:#0b0d0c;--panel:#121514;--panel2:#181c1a;--line:rgba(255,255,255,.085);
+  --ink:#ECEAE3;--muted:#868d85;--dim:#5d635c;
+  --pos:#5DCAA5;--neg:#E2756B;--flow:#EFB45C;--accent:#6FD2B0;--info:#7FB2E8;--viol:#B79CE0;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg)}
+.wrap{font-family:'Hanken Grotesk','Helvetica Neue',Helvetica,Arial,system-ui,sans-serif;background:var(--bg);color:var(--ink);
+  padding:22px;max-width:960px;margin:0 auto;line-height:1.5}
+@media(max-width:600px){.wrap{padding:14px}}
+.mono{font-family:'IBM Plex Mono','SF Mono',Menlo,Consolas,'Liberation Mono',monospace;font-variant-numeric:tabular-nums}
+.top{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px;border-bottom:1px solid var(--line);padding-bottom:16px}
+.title{font-size:23px;font-weight:700;letter-spacing:-.01em;margin:0}
+.title small{display:block;font-size:11px;font-weight:500;color:var(--muted);letter-spacing:.2em;text-transform:uppercase;margin-bottom:6px}
+.wk{font-family:'IBM Plex Mono','SF Mono',Menlo,Consolas,'Liberation Mono',monospace;font-size:12px;color:var(--accent);text-align:right}
+.wk b{display:block;color:var(--ink);font-size:14px;font-weight:500}
+.sec{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:26px 0 12px;font-weight:600;display:flex;align-items:center;gap:8px}
+.sec::after{content:'';flex:1;height:1px;background:var(--line)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:13px 14px}
+.card .lab{font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--dim)}
+.card .big{font-family:'IBM Plex Mono','SF Mono',Menlo,Consolas,'Liberation Mono',monospace;font-size:20px;font-weight:600;margin-top:5px}
+.card .sub{font-size:11px;color:var(--muted);margin-top:2px}
+.pos{color:var(--pos)}.neg{color:var(--neg)}.flow{color:var(--flow)}.info{color:var(--info)}.dim{color:var(--dim)}
+.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;min-width:520px}
+th{font-size:10px;text-transform:uppercase;letter-spacing:.07em;color:var(--dim);font-weight:500;text-align:right;padding:0 0 8px;border-bottom:1px solid var(--line);white-space:nowrap}
+th.l,td.l{text-align:left}
+td{padding:8px 0;border-bottom:1px solid var(--line);font-size:13.5px;text-align:right}
+tr:last-child td{border-bottom:0}
+.tk{font-family:'IBM Plex Mono','SF Mono',Menlo,Consolas,'Liberation Mono',monospace;font-weight:600;font-size:13px}
+.nm{color:var(--muted);font-size:11.5px;margin-left:6px}
+.val{font-family:'IBM Plex Mono','SF Mono',Menlo,Consolas,'Liberation Mono',monospace;font-size:13px}
+.tag{font-size:10px;font-family:'IBM Plex Mono','SF Mono',Menlo,Consolas,'Liberation Mono',monospace;padding:2px 7px;border-radius:4px;white-space:nowrap}
+.t-flow{background:rgba(239,180,92,.16);color:var(--flow)}
+.t-div{background:rgba(127,178,232,.15);color:var(--info)}
+.t-lag{background:rgba(255,255,255,.05);color:var(--dim)}
+.t-win{background:rgba(93,202,165,.15);color:var(--pos)}
+.t-act{background:rgba(226,117,107,.16);color:var(--neg)}
+.t-hold{background:rgba(183,156,224,.16);color:var(--viol)}
+.note{font-size:12px;color:var(--muted);margin:8px 0 0;line-height:1.55}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin-bottom:10px}
+.flag{display:flex;align-items:flex-start;gap:10px;padding:9px 0;border-bottom:1px solid var(--line);font-size:13px}
+.flag:last-child{border-bottom:0}
+.dot{flex:none;width:9px;height:9px;border-radius:50%;margin-top:5px}
+.flag b{font-weight:600}
+.flag span{color:var(--muted);font-size:12px}
+.chk{display:flex;align-items:center;gap:10px;padding:7px 0;font-size:13px;color:var(--muted)}
+.box{flex:none;width:13px;height:13px;border:1px solid var(--line);border-radius:3px}
+.macrorow{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid var(--line);font-size:13px;flex-wrap:wrap}
+.macrorow:last-child{border-bottom:0}
+.macrorow .k{color:var(--ink);font-weight:600;font-size:13px}
+.macrorow .v{font-family:'IBM Plex Mono','SF Mono',Menlo,Consolas,'Liberation Mono',monospace;font-size:12px;color:var(--accent)}
+.macrorow .d{flex-basis:100%;color:var(--muted);font-size:12px;line-height:1.55}
+.foot{margin-top:26px;border-top:1px solid var(--line);padding-top:14px;font-size:12px;color:var(--muted);line-height:1.6}
+.foot b{color:var(--ink);font-weight:500}
+.stale{background:rgba(239,180,92,.14);border:1px solid rgba(239,180,92,.4);color:var(--flow);border-radius:9px;padding:11px 14px;margin:18px 0 0;font-size:13px;line-height:1.5}
+.gl{padding:10px 0;border-bottom:1px solid var(--line);font-size:13px}
+.gl:last-child{border-bottom:0}
+.gl b{font-weight:600}
+.gl.cur{background:rgba(239,180,92,.07);margin:0 -8px;padding:10px 8px;border-radius:6px}
+.gl .now{font-size:10px;font-family:'IBM Plex Mono',monospace;background:rgba(239,180,92,.18);color:var(--flow);padding:2px 7px;border-radius:4px;margin-left:8px}
+.gl p{margin:4px 0 0;color:var(--muted);font-size:12.5px;line-height:1.55}
+.hist{font-family:'IBM Plex Mono','SF Mono',Menlo,Consolas,'Liberation Mono',monospace;font-size:11px;color:var(--dim);margin-top:8px}
+.wow{font-family:'IBM Plex Mono','SF Mono',Menlo,Consolas,'Liberation Mono',monospace;font-size:11px;color:var(--dim);margin-left:6px}
+.regime{font-size:13.5px;margin-top:8px;color:var(--ink)}
+.regime .lean{font-family:'IBM Plex Mono','SF Mono',Menlo,Consolas,'Liberation Mono',monospace;font-size:12px;color:var(--muted);margin-left:6px}
+.scroll{max-width:100%}
+th+th,td+td{padding-left:12px}
+table.env{min-width:0}
+table.kv{min-width:0}
+table.kv td{font-size:13px}
+table.kv td.l{color:var(--ink);font-weight:600;padding-right:14px;white-space:nowrap;vertical-align:top}
+table.kv td.val{text-align:left;color:var(--accent);font-size:12px}
+.cyc{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.cyc .card .big{font-size:16px}
+.subl{font-size:11.5px;color:var(--flow);margin:-4px 0 10px}
+details.fold{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px 14px}
+details.fold summary{cursor:pointer;font-size:12.5px;color:var(--muted)}
+details.fold[open] summary{margin-bottom:8px}
+details.about{margin-top:12px}
+details.about summary{cursor:pointer;color:var(--ink);font-size:12.5px}
+details.about h4{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:16px 0 6px;font-weight:600}
+details.about p{margin:6px 0}
+.defs{margin:0;padding:0;list-style:none}
+.defs li{padding:4px 0;font-size:12.5px}
+.defs b{color:var(--ink);font-weight:600}
+.clamp{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;cursor:pointer}
+.clamp.open{display:block;-webkit-line-clamp:unset}
+@media(max-width:599.98px){
+  .lede-rest{display:none}.title{font-size:20px}
+  .hp{display:none}
+  table.ph{min-width:0}
+  .clamp{display:block;-webkit-line-clamp:unset}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <div>
+      <h1 class="title"><small>weekly market read</small>Sector flow, relative strength and macro</h1>
+      <div class="regime" id="regimeLine"></div>
+    </div>
+    <div class="wk"><b id="wkLabel">week of —</b><span id="wkSrc"></span></div>
+  </div>
+
+  <div id="staleBar"></div>
+
+  <div class="sec">This week</div>
+  <div class="panel" id="lede"></div>
+
+  <div class="sec">Environment</div>
+  <div class="scroll"><table class="env ph">
+    <thead><tr><th class="l">Family</th><th class="l hp">Reads</th><th class="l">Vote</th></tr></thead>
+    <tbody id="voteBody"></tbody>
+  </table></div>
+
+  <div id="cycleWrap" hidden>
+    <div class="sec">Cycle read</div>
+    <div class="subl">New, running alongside the regime panel since 14 Nov 2026. Not yet validated.</div>
+    <div class="cyc" id="cycleCards"></div>
+  </div>
+
+  <div class="sec">Sector flow</div>
+  <div class="scroll"><table class="ph">
+    <thead><tr><th class="l">Sector</th><th class="hp">RS 1w</th><th>RS 4w</th><th>RS 3m</th><th class="hp">corr shift</th><th class="hp">v 200d</th><th class="l">Read</th></tr></thead>
+    <tbody id="secBody"></tbody>
+  </table></div>
+
+  <div class="sec">Volatility &amp; expected move</div>
+  <div class="scroll"><table class="ph">
+    <thead><tr><th class="l">Name</th><th class="hp">Spot</th><th class="hp">IV</th><th>IV pctile</th><th class="hp">IV/HV</th><th>Exp. move</th><th class="l" id="laneHd"></th></tr></thead>
+    <tbody id="volBody"></tbody>
+  </table></div>
+
+  <div class="sec">Ratio pairs</div>
+  <div class="scroll"><table class="ph">
+    <thead><tr><th class="l">Pair</th><th>Level</th><th>50d</th><th>4wk %</th><th class="l hp">Read</th></tr></thead>
+    <tbody id="ratioBody"></tbody>
+  </table></div>
+
+  <div class="sec">Sub-industry</div>
+  <details class="fold">
+    <summary id="subSummary">Show sub-industry table</summary>
+    <div class="scroll"><table>
+      <thead><tr><th class="l">ETF</th><th>RS 1w</th><th>RS 4w</th><th>RS 3m</th><th>corr shift</th><th>v 200d</th><th class="l" id="subHd"></th></tr></thead>
+      <tbody id="subBody"></tbody>
+    </table></div>
+  </details>
+
+  <div class="sec">Macro</div>
+  <div class="panel"><table class="kv"><tbody id="macroBody"></tbody></table></div>
+
+  <div class="sec">Watching for</div>
+  <div class="panel" id="checklist"></div>
+
+  <div class="foot">
+    <div id="discLine"></div>
+    <details class="about">
+      <summary>About this page</summary>
+      <div id="dataDate" style="margin-top:8px"></div>
+
+      <h4>What the regimes mean</h4>
+      <div id="glossary"></div>
+      <p id="glossaryNote"></p>
+
+      <div id="cycleDefs" hidden>
+        <h4>Cycle read: phases</h4>
+        <ul class="defs">
+          <li><b>Early cycle.</b> Policy easing, the yield curve steepening, credit spreads tightening and growth bottoming out after a slowdown.</li>
+          <li><b>Mid cycle.</b> Growth and earnings positive, credit expanding and volatility low.</li>
+          <li><b>Late cycle.</b> Inflation rising, policy tightening, the curve flattening and the labour market tight.</li>
+          <li><b>Contraction.</b> Earnings falling, credit tightening, unemployment rising and volatility spiking.</li>
+          <li><b>Unassigned.</b> Not enough signals available, or no phase clearly ahead, so no phase is named.</li>
+        </ul>
+        <h4>Cycle read: growth / inflation</h4>
+        <ul class="defs">
+          <li><b>Goldilocks.</b> Growth improving while inflation eases.</li>
+          <li><b>Inflationary boom.</b> Growth and inflation both rising.</li>
+          <li><b>Stagflation.</b> Growth slowing while inflation rises.</li>
+          <li><b>Deflationary bust.</b> Growth and inflation both falling.</li>
+        </ul>
+        <p>Numbers beside the label are growth and inflation momentum scaled against their own recent history (0 = flat). Sector tape is the phase that this week's sector ranking most resembles. Recession signals counts long-standing warning signs now showing, out of the five tracked that have data this week. "Data to" is the month of the oldest monthly input.</p>
+      </div>
+
+      <h4>Method</h4>
+      <p id="method"></p>
+      <p id="envSentence"></p>
+
+      <h4>Disclaimer</h4>
+      <p id="disclaimer"></p>
+      <div class="hist" id="histLine"></div>
+    </details>
+  </div>
+</div>
+
+<script>
+const D = {"week":"2026-11-20","src":"Marks as of US close 20 Nov 2026. 501 daily bars, 45 relative-strength rows across a 46-symbol universe. Bid/ask unavailable on a weekend pull, so every price here is a close, a last or a settlement mark. Fed: FOMC statement, 28 Oct; minutes, 18 Nov. CPI: BLS, 10 Nov. 10-year and 2-year yields (18 Nov), high-yield spread and 10-year breakeven (19 Nov): FRED. Oil, dollar index and VIX levels were not sourced this week; ETF proxies are shown instead.","lede":[{"st":"warn","h":"A broad fall led by technology; SPY lost 7.72% on the week","s":"SPY closed at 695.22, from 753.39, and is now 8.56% below its 50-day and 5.13% below its 200-day; sectors above their 200-day fell to <b>4 of 11</b> from 7. Semiconductors and technology trailed SPY by 8.87 and 3.72 on the week, leaving them 22.80% and 12.09% under their 200-day. Staples, utilities and real estate led on four weeks (+9.96, +9.14, +9.61), equal-weight against cap-weight is +5.12%, and only <b>1 of 45 rows</b> screens (China large caps). SPY implied vol rose to 28.26, the 99.7th percentile of its year, from 14.60."},{"st":"warn","h":"Treasuries cushioned the fall; metals fell with shares","s":"Long Treasuries outperformed SPY by <b>10.61</b> on the week and intermediates by 9.68, and the 60-day shares/bonds correlation turned negative at −0.037, from 0.100. The 10-year yield was 5.07% on 18 Nov, from 5.15% on 13 Nov; the high-yield spread widened to 3.52% on 19 Nov from 3.23%. GLD fell 9.31% to 322.17 and SLV 16.39% to 36.93, while the dollar fund rose 0.44%."},{"st":"hold","h":"Regime: still unassigned, 11th week","s":"Two of five voting families cast a vote, for different regimes (equity internals for expansion; commodities for fiscal dominance). The correlation family needs a reading above 0.297 to vote and is moving away from it. The cycle read, new and not yet validated, shows late cycle at medium confidence while its sector tape reads contraction; its growth input is 81 days stale, so no quad label is computed this week."}],"sectors":[{"c":"XLP","n":"Cons Staples","rs1w":6.22,"rs4w":9.96,"rs3m":12.83,"shift":0.16,"a200":true,"p200":6.85,"sig":"flow"},{"c":"XLRE","n":"Real Estate","rs1w":4.26,"rs4w":9.61,"rs3m":3.31,"shift":0.12,"a200":false,"p200":-1.75,"sig":"flow"},{"c":"XLU","n":"Utilities","rs1w":5.32,"rs4w":9.14,"rs3m":8.27,"shift":0.2,"a200":false,"p200":-3.18,"sig":"flow"},{"c":"XLY","n":"Cons Disc","rs1w":2.13,"rs4w":7.37,"rs3m":4.57,"shift":0.04,"a200":false,"p200":-1.92,"sig":"flow"},{"c":"XLV","n":"Health Care","rs1w":2.27,"rs4w":7.36,"rs3m":11.02,"shift":0.2,"a200":true,"p200":10.85,"sig":"flow"},{"c":"XLF","n":"Financials","rs1w":1.5,"rs4w":6.02,"rs3m":3.34,"shift":0.12,"a200":true,"p200":1.74,"sig":"flow"},{"c":"XLI","n":"Industrials","rs1w":1.03,"rs4w":3.34,"rs3m":-3.19,"shift":0.08,"a200":false,"p200":-9.25,"sig":"flow"},{"c":"XLB","n":"Materials","rs1w":1.0,"rs4w":3.14,"rs3m":-0.24,"shift":0.14,"a200":false,"p200":-5.03,"sig":"flow"},{"c":"XLC","n":"Comm Svcs","rs1w":0.52,"rs4w":2.77,"rs3m":-1.38,"shift":0.1,"a200":false,"p200":-10.08,"sig":"flow"},{"c":"XLE","n":"Energy","rs1w":1.51,"rs4w":-0.95,"rs3m":5.36,"shift":0.1,"a200":true,"p200":1.87,"sig":"lag"},{"c":"XLK","n":"Technology","rs1w":-3.72,"rs4w":-8.41,"rs3m":-7.42,"shift":0.03,"a200":false,"p200":-12.09,"sig":"lag"}],"subind":[{"c":"IHI","p":"XLV","rs1w":3.91,"rs4w":10.59,"rs3m":8.69,"shift":0.16,"a200":true,"p200":4.5,"note":"Medical devices."},{"c":"KIE","p":"XLF","rs1w":6.2,"rs4w":9.22,"rs3m":9.42,"shift":0.06,"a200":true,"p200":7.44,"note":"Insurance."},{"c":"PPH","p":"XLV","rs1w":2.02,"rs4w":7.69,"rs3m":8.11,"shift":0.18,"a200":true,"p200":6.06,"note":"Pharmaceuticals."},{"c":"XHB","p":"XLY","rs1w":3.18,"rs4w":7.09,"rs3m":0.49,"shift":0.09,"a200":false,"p200":-6.77,"note":"Homebuilders."},{"c":"ITA","p":"XLI","rs1w":1.02,"rs4w":6.76,"rs3m":-5.42,"shift":0.12,"a200":false,"p200":-12.0,"note":"Aerospace and defence."},{"c":"PEJ","p":"XLY","rs1w":3.88,"rs4w":6.69,"rs3m":2.79,"shift":0.14,"a200":true,"p200":1.9,"note":"Leisure and entertainment."},{"c":"XRT","p":"XLY","rs1w":3.3,"rs4w":6.53,"rs3m":6.77,"shift":0.13,"a200":true,"p200":1.41,"note":"Retail."},{"c":"IYT","p":"XLI","rs1w":2.67,"rs4w":5.9,"rs3m":0.36,"shift":0.19,"a200":false,"p200":-3.28,"note":"Transports."},{"c":"MOO","p":"XLB","rs1w":1.71,"rs4w":5.57,"rs3m":1.27,"shift":0.21,"a200":false,"p200":-4.89,"note":"Agribusiness."},{"c":"FXI","p":"CHINA","rs1w":1.39,"rs4w":5.52,"rs3m":-2.96,"shift":-0.07,"a200":false,"p200":-11.08,"note":"China large caps. Outperforming on four weeks and de-correlating at −0.07."},{"c":"KRE","p":"XLF","rs1w":2.59,"rs4w":4.18,"rs3m":1.13,"shift":0.24,"a200":false,"p200":-3.21,"note":"Regional banks."},{"c":"XBI","p":"XLV","rs1w":1.62,"rs4w":2.1,"rs3m":-5.06,"shift":0.21,"a200":false,"p200":-1.58,"note":"Biotech."},{"c":"IAI","p":"XLF","rs1w":-0.95,"rs4w":1.96,"rs3m":-5.31,"shift":0.13,"a200":false,"p200":-7.04,"note":"Brokers."},{"c":"KWEB","p":"CHINA","rs1w":-1.54,"rs4w":-1.47,"rs3m":-11.9,"shift":-0.12,"a200":false,"p200":-23.24,"note":"China internet."},{"c":"CIBR","p":"XLK","rs1w":4.46,"rs4w":-1.68,"rs3m":7.44,"shift":0.15,"a200":true,"p200":7.97,"note":"Cybersecurity."},{"c":"OIH","p":"XLE","rs1w":-4.16,"rs4w":-3.34,"rs3m":-10.2,"shift":0.12,"a200":false,"p200":-17.16,"note":"Oil services."},{"c":"XOP","p":"XLE","rs1w":-0.78,"rs4w":-5.22,"rs3m":-0.39,"shift":0.07,"a200":false,"p200":-2.87,"note":"Oil and gas producers."},{"c":"IGV","p":"XLK","rs1w":-1.1,"rs4w":-6.25,"rs3m":-1.12,"shift":0.19,"a200":false,"p200":-2.43,"note":"Software."},{"c":"GDX","p":"XLB","rs1w":-7.84,"rs4w":-6.73,"rs3m":-24.57,"shift":-0.03,"a200":false,"p200":-22.71,"note":"Gold miners."},{"c":"SKYY","p":"XLK","rs1w":-1.99,"rs4w":-7.31,"rs3m":-4.55,"shift":0.09,"a200":false,"p200":-0.83,"note":"Cloud infrastructure."},{"c":"TAN","p":"XLE","rs1w":-10.0,"rs4w":-8.24,"rs3m":-20.24,"shift":-0.02,"a200":false,"p200":-35.58,"note":"Solar."},{"c":"SIL","p":"XLB","rs1w":-10.25,"rs4w":-11.49,"rs3m":-30.86,"shift":0.02,"a200":false,"p200":-31.64,"note":"Silver miners."},{"c":"URA","p":"XLE","rs1w":-7.27,"rs4w":-11.71,"rs3m":-31.9,"shift":0.09,"a200":false,"p200":-40.35,"note":"Uranium."},{"c":"SMH","p":"XLK","rs1w":-8.87,"rs4w":-13.53,"rs3m":-16.91,"shift":0.06,"a200":false,"p200":-22.8,"note":"Semiconductors."},{"c":"COPX","p":"XLB","rs1w":-10.39,"rs4w":-13.59,"rs3m":-31.17,"shift":0.1,"a200":false,"p200":-31.08,"note":"Copper miners."},{"c":"IBIT","p":"CRYPTO","rs1w":-7.29,"rs4w":-19.25,"rs3m":-17.02,"shift":0.08,"a200":false,"p200":-19.14,"note":"Bitcoin."}],"vol":[{"n":"KWEB","s":20.78,"iv":34.92,"p":89.9,"r":1.23,"em":3.23,"lane":"credit"},{"n":"IBIT","s":33.05,"iv":49.85,"p":89.6,"r":1.23,"em":7.34,"lane":"credit"},{"n":"XLE","s":60.85,"iv":29.53,"p":95.3,"r":1.14,"em":8.0,"lane":"credit"},{"n":"KRE","s":68.92,"iv":28.57,"p":80.5,"r":1.3,"em":8.77,"lane":"credit"},{"n":"SLV","s":36.93,"iv":55.08,"p":78.9,"r":1.32,"em":9.06,"lane":"credit"},{"n":"MAGS","s":62.27,"iv":40.32,"p":99.7,"r":1.63,"em":11.18,"lane":"credit"},{"n":"GDX","s":68.84,"iv":55.4,"p":95.9,"r":1.17,"em":16.98,"lane":"credit"},{"n":"SPY","s":695.22,"iv":28.26,"p":99.7,"r":1.87,"em":87.49,"lane":"credit"}],"ratios":[{"n":"XLE/USO","lvl":0.4397,"ma":0.42724,"chg":5.75,"r":"+5.75% over four weeks, from +5.24%, above the 50-day. Energy shares against crude. Legs: XLE −0.95, USO −5.84. Both negative on four weeks; crude fell further."},{"n":"RSP/SPY","lvl":0.30028,"ma":0.28271,"chg":5.12,"r":"+5.12% over four weeks, from +5.25%, above the 50-day. <b>Equal-weight against cap-weight.</b> Legs: RSP +4.66 against SPY. The average stock is 2.82% below its 50-day; the index is 8.56% below."},{"n":"IGV/SMH","lvl":0.22726,"ma":0.19402,"chg":9.4,"r":"+9.40% over four weeks, from +6.51%, above the 50-day. Software over semis. Legs: IGV −6.25, SMH −13.53. Both negative; semis fell about twice as far."},{"n":"MAGS/SMH","lvl":0.15359,"ma":0.12984,"chg":14.1,"r":"+14.10% over four weeks, from +8.70%, above the 50-day. Megacap tech over semis. Legs: MAGS −2.61, SMH −13.53. Both negative; the ratio rises because semis fell much further."},{"n":"GDX/GLD","lvl":0.21368,"ma":0.22899,"chg":-3.48,"r":"−3.48% over four weeks, from +1.18%, below the 50-day. Miners over metal. Legs: GDX −6.73, GLD −3.69. Both negative; miners fell further, a turn from last week."},{"n":"SLV/GLD","lvl":0.11463,"ma":0.13567,"chg":-14.27,"r":"−14.27% over four weeks, from −8.35%, below the 50-day. Silver over gold. Legs: SLV −16.15, GLD −3.69. Both negative; silver fell about four times as far."},{"n":"TIP/IEF","lvl":1.15365,"ma":1.16336,"chg":-1.05,"r":"−1.05% over four weeks, from −0.30%, below the 50-day. Inflation-breakeven proxy. Legs: TIP +8.49, IEF +9.55, both against a falling SPY. Nominals ahead of inflation-linked."},{"n":"KWEB/FXI","lvl":0.66347,"ma":0.70987,"chg":-7.24,"r":"−7.24% over four weeks, from −4.67%, below the 50-day. China internet over the broad China index. Legs: KWEB −1.47, FXI +5.52. Internet negative, the broad index positive."}],"envread":{"lean":"UNASSIGNED","cards":[{"lab":"Regime lean","big":"UNASSIGNED","sub":"raw 1–1 · 11th week","clr":"dim"},{"lab":"HY credit","big":"OAS 3.52%","sub":"19 Nov · from 3.40% on 22 Oct · HYG 76.39, below 50- and 200-day","clr":"dim"},{"lab":"Shares/bonds correlation","big":"−0.037","sub":"60-day · from 0.100 · streak 0/21","clr":"dim"},{"lab":"Screen fires","big":"1 / 45","sub":"RS_4wk > 0 and de-correlating from SPY","clr":"dim"}],"sentence":"Raw tally: expansion 1, fiscal dominance 1 (equity internals for expansion; commodities for fiscal dominance). Rates, currency, correlation abstained. That is not enough agreement for a label, so the system assigns none, for the 11th week. Shares/bonds 60-day correlation is −0.037, from 0.100; streak 0/21.","votes":[{"ind":"A · Curve &amp; rates","says":"Derived real yields +0.15 over 20 days","vote":"ABSTAIN","clr":"dim"},{"ind":"B · Currency","says":"UUP RS_4wk 4.07 → 11.49; 30Y 20-day change −0.01","vote":"ABSTAIN","clr":"dim"},{"ind":"C · Correlation","says":"SPY/TLT 60-day correlation 0.100 → −0.037, against a 0.297 threshold. Streak 0/21 sessions","vote":"ABSTAIN","clr":"dim"},{"ind":"E · Equity internals","says":"Equal-weight +5.12% vs cap-weight over four weeks; 4 of 11 sectors above their 200-day, from 7; staples +9.96, health care +7.36, utilities +9.14; XBI/XLV spread −5.26, so its independence check fails and it votes on breadth alone","vote":"EXPANSION","clr":"flow"},{"ind":"F · Commodities","says":"USO −5.84 on four weeks, +13.61 on three months; GDX −6.73, SIL −11.49, COPX −13.59, GLD −3.69. Gold-decoupling flag False, miner-beta flag False","vote":"FISCAL_DOMINANCE","clr":"flow"},{"ind":"D · Credit","says":"High-yield OAS 3.52% on 19 Nov, from 3.40% on 22 Oct and 3.23% on 13 Nov; HYG below its 50- and 200-day","vote":"NO VOTE — context only, by design","clr":"dim"},{"ind":"Independence note","says":"The 30-year yield is an input to both the rates and currency families","vote":"No penalty applied — both abstained","clr":"dim"}]},"glossary":[{"name":"Unassigned","current":true,"plain":"Not a state of the world — a state of the evidence. It means the indicators disagreed enough that no single label was justified. This week two of five voting families cast a vote."},{"name":"Fiscal dominance","current":false,"plain":"Government borrowing, rather than the central bank, sets the tone for interest rates. Long-term borrowing costs rise because there is a lot of government debt to sell and buyers want more compensation to hold it. The practical consequence: government bonds stop protecting a share portfolio, because both fall on the same news. Anyone with an ordinary superannuation or pension balance holds that mix."},{"name":"Late cycle, hot","current":false,"plain":"Growth is still strong but running above what the economy can sustain. Inflation pressure builds and the central bank leans against it with rate rises, which pushes short-term yields up fastest. Commodities and companies with pricing power usually do better than the fast-growing names that led earlier."},{"name":"Expansion","current":false,"plain":"The ordinary good state. Growth is solid, inflation is contained, and company earnings are rising. Shares generally do well, and bonds behave the way most people expect — providing a cushion when shares fall."},{"name":"Stagflation","current":false,"plain":"Weak growth alongside high inflation. There is no obvious hiding place, because the policies that would help one problem make the other worse. Historically hard on both shares and bonds at the same time."},{"name":"Deflationary recession","current":false,"plain":"Demand falls away and prices with it. Growth turns negative and inflation drops below target. This is the state in which government bonds work best — the central bank cuts rates hard, and safe assets rise while shares fall."}],"glossaryNote":"The system runs six independent families of indicators — interest rates, currencies, the correlation between shares and bonds, credit markets, share-market internals, and commodities — and each votes for a regime or abstains. A label is only assigned when enough of them agree and their evidence is genuinely independent of each other. <b>Two families reading the same underlying number get counted once, not twice.</b> This week two families voted, for different regimes: equity internals for expansion; commodities for fiscal dominance. That is not enough agreement, so no label was assigned.","macro":[{"k":"Rates","v":"10Y 5.07% · 2s10s +27bp (18 Nov)","d":""},{"k":"Breakeven","v":"10Y breakeven 2.16% (19 Nov)","d":""},{"k":"Inflation","v":"Oct CPI +0.4% m/m (10 Nov) · no 12-month rate published","d":""},{"k":"Fed","v":"Held 3.75–4.00%, 10–2 (28 Oct) · minutes (18 Nov): hold a close call for some","d":""},{"k":"Credit","v":"HY OAS 3.52% (19 Nov) · HYG 76.39","d":""},{"k":"Volatility","v":"SPY IV 28.26, 99.7th pct","d":""},{"k":"Energy","v":"USO 138.39 · 7.12% over 200-day","d":""},{"k":"Metals","v":"GLD 322.17 · SLV 36.93","d":""},{"k":"Dollar","v":"UUP 29.62 · RS_4wk +11.49","d":""}],"checklist":["SPY 8.56% below its 50-day and 5.13% below its 200-day, after closing 2.93% above it a week earlier","Technology 12.09% below its 200-day, semiconductors 22.80% below; QQQ 9.98% below","High-yield spread 3.52% (19 Nov), from 3.23% (13 Nov); HYG below its 50- and 200-day","Shares/bonds 60-day correlation −0.037, the lowest of the 60 sessions shown; streak 0/21","SPY implied vol 28.26, 99.7th percentile of its year; IV/HV 1.87"],"history":[{"week":"2026-07-17","top3":["XLV","XLE","XLF"]},{"week":"2026-07-24","top3":["XLE","XLV","XLF"]},{"week":"2026-08-01","top3":["XLE","XLF","XLP"]},{"week":"2026-08-08","top3":["XLB","XLE","XLF"]},{"week":"2026-08-15","top3":["XLE","XLK","XLI"]},{"week":"2026-08-22","top3":["XLY","XLV","XLE"]},{"week":"2026-08-29","top3":["XLE","XLC","XLK"]},{"week":"2026-09-04","top3":["XLE","XLV","XLK"]},{"week":"2026-09-11","top3":["XLE","XLC","XLK"]},{"week":"2026-09-18","top3":["XLK","XLE","XLC"]},{"week":"2026-09-25","top3":["XLK","XLC","XLE"]},{"week":"2026-10-02","top3":["XLK","XLI","XLC"]},{"week":"2026-10-09","top3":["XLK","XLV","XLY"]},{"week":"2026-10-16","top3":["XLE","XLP","XLV"]},{"week":"2026-10-23","top3":["XLE","XLU","XLP"]},{"week":"2026-10-30","top3":["XLE","XLP","XLV"]},{"week":"2026-11-06","top3":["XLV","XLP","XLRE"]},{"week":"2026-11-13","top3":["XLV","XLP","XLF"]},{"week":"2026-11-20","top3":["XLP","XLRE","XLU"]}],"method":"Sector and sub-industry ETFs are ranked weekly on relative strength against SPY over three windows — 1 week as a tell only, 4 weeks as the actionable leg, 3 months as the trend anchor — alongside a correlation shift (20-day minus 60-day) measuring whether a group is moving away from the index or with it. Ratio pairs are always read as two legs. Implied vol is compared to realised to judge whether options are pricing more or less movement than the underlying has been delivering. The regime panel is a separate voting system across six indicator families and is treated as context, never as an instruction. Everything is close-basis; nothing here is an intraday read. When a fault is found in the underlying data, the correction is published alongside the new reading and the affected archive page is left unaltered.","disclaimer":"Written for interest, not as advice. No positions, sizing or account information appears on this page, and nothing here is a recommendation to buy or sell anything. Numbers are as of the US close on the stated Friday and go stale quickly.","cycle":{"phase":{"current":"late","confidence":"MED"},"quad":{"label":null,"g_z":null,"i_z":0.8},"tape":{"phase":"contraction","agrees":false},"hazard":{"count":1,"available":5},"as_of":"2026-09-01"}};
+const SHOW_SCREEN = true;
+const SHOW_LANE = true;
+
+const SIG={flow:["receiving flow","t-flow"],div:["diversifier · −corr","t-div"],lag:["lagging SPY","t-lag"]};
+const DOT={ok:"var(--pos)",warn:"var(--flow)",act:"var(--neg)",hold:"var(--viol)"};
+const LANE={debit:["implied &lt; realised","t-win"],credit:["implied &gt; realised","t-act"],line:["on the line","t-lag"]};
+const n2=(v,d)=>v===null||v===undefined?"·":(v>0?"+":"")+v.toFixed(d===undefined?2:d);
+const cls=v=>v===null||v===undefined?"dim":(v>0?"pos":(v<0?"neg":""));
+
+const PHASE={early:"Early cycle",mid:"Mid cycle",late:"Late cycle",contraction:"Contraction"};
+const phaseName=p=>PHASE[p]||"Unassigned";
+const set=(id,html)=>{const el=document.getElementById(id); if(el) el.innerHTML=html||"";};
+
+// First sentence of a lede body, without splitting inside a <b>…</b>.
+function splitFirst(s){
+ const re=/[.!?](<\/b>)?\s+/g; let m;
+ while((m=re.exec(s))){
+  const head=s.slice(0,m.index+m[0].length);
+  if((head.match(/<b>/g)||[]).length===(head.match(/<\/b>/g)||[]).length)
+   return [head, s.slice(head.length)];
+ }
+ return [s,""];
+}
+
+function render(){
+ const env=D.envread||{};
+ document.getElementById("wkLabel").textContent="week of "+D.week;
+ document.getElementById("wkSrc").textContent="close basis";
+
+ // Header regime line: current regime + lean status from the regime card.
+ const cur=(D.glossary||[]).find(g=>g.current);
+ const leanCard=(env.cards||[]).find(c=>/regime lean/i.test(c.lab||""));
+ // Lean status: the card's sub-line; its big value only when it differs from the regime name.
+ const leanBig=leanCard?leanCard.big:(env.lean||"");
+ const same=cur&&String(leanBig).toLowerCase()===String(cur.name).toLowerCase();
+ // Voting families: rows named "<letter> · …", minus NO VOTE / context-only rows.
+ const nFam=(env.votes||[]).filter(v=>/^[A-Z] ·/.test(v.ind||"")&&!/^no vote/i.test(v.vote||"")).length;
+ const sub=(leanCard?leanCard.sub:"").replace(/\braw (\d+)\s*[–-]\s*(\d+)/,(m,a,b)=>{
+  const n=+a + +b, of=nFam?` (${n} of ${nFam})`:"";
+  return n===1?`1 vote${of}`:`votes ${a}–${b}${of}`;});
+ const lean=[same?"":leanBig, sub].filter(Boolean).join(" · ");
+ set("regimeLine", cur?`Regime: <b>${cur.name}</b>${lean?`<span class="lean">${lean}</span>`:""}`:"");
+
+ // Staleness: a failed weekly run leaves the last page up with no other tell.
+ const age=Math.floor((Date.now()-Date.parse(D.week+"T00:00:00Z"))/864e5);
+ set("staleBar", age>10
+  ? `<div class="stale">This page has not updated in ${age} days. It last refreshed on ${D.week}, so every number below is at least that old and the market has moved since.</div>`
+  : "");
+
+ set("lede", (D.lede||[]).slice(0,3).map(o=>{
+  const [first,rest]=splitFirst(o.s||"");
+  return `<div class="flag"><div class="dot" style="background:${DOT[o.st]||DOT.ok}"></div><div><b>${o.h}</b><br><span>${first}<span class="lede-rest">${rest}</span></span></div></div>`;}).join(""));
+
+ set("voteBody", (env.votes||[]).filter(v=>!/^independence note/i.test(v.ind||"")).map(v=>
+  `<tr><td class="l"><b>${v.ind}</b></td><td class="l hp" style="color:var(--muted);font-size:12px">${v.says}</td><td class="l ${v.clr||""}" style="font-size:12px">${v.vote}</td></tr>`).join(""));
+
+ // Cycle read card — only when the week carries a cycle block.
+ const C=D.cycle;
+ if(C){
+  const q=C.quad||{}, f1=v=>v===null||v===undefined?"·":(v>0?"+":"")+Number(v).toFixed(1);
+  const tapeAg=C.tape&&C.tape.agrees===true?"agrees":(C.tape&&C.tape.agrees===false?"differs":"—");
+  const MON=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  const mon=/^\d{4}-\d{2}/.test(C.as_of||"")?MON[+C.as_of.slice(5,7)-1]+" "+C.as_of.slice(0,4):"—";
+  const cards=[
+   ["Phase", phaseName(C.phase&&C.phase.current), C.phase&&C.phase.confidence?"confidence "+C.phase.confidence:""],
+   ["Growth / inflation", q.label||"Unassigned", `growth ${f1(q.g_z)} · inflation ${f1(q.i_z)}`],
+   ["Sector tape", phaseName(C.tape&&C.tape.phase), tapeAg],
+   ["Recession signals", (C.hazard&&C.hazard.count!=null?C.hazard.count:"·")+" of "+(C.hazard&&C.hazard.available!=null?C.hazard.available:"·"), "data to "+mon],
+  ];
+  set("cycleCards", cards.map(c=>`<div class="card"><div class="lab">${c[0]}</div><div class="big">${c[1]}</div><div class="sub">${c[2]}</div></div>`).join(""));
+  document.getElementById("cycleWrap").hidden=false;
+  document.getElementById("cycleDefs").hidden=false;
+ }
+
+ const sorted=[...D.sectors].sort((a,b)=>b.rs4w-a.rs4w);
+ set("secBody", sorted.map(x=>{
+  const sg=SIG[x.sig]||["",""];
+  return `<tr><td class="l"><span class="tk">${x.c}</span><span class="nm">${x.n}</span></td>
+   <td class="val hp ${cls(x.rs1w)}">${n2(x.rs1w)}</td><td class="val ${cls(x.rs4w)}">${n2(x.rs4w)}</td>
+   <td class="val ${cls(x.rs3m)}">${n2(x.rs3m)}</td><td class="val hp ${x.shift<0?'info':'dim'}">${n2(x.shift)}</td>
+   <td class="val hp ${cls(x.p200)}">${n2(x.p200,1)}%</td>
+   <td class="l"><span class="tag ${sg[1]}">${sg[0]}</span></td></tr>`;}).join(""));
+
+ set("subBody", D.subind.map(x=>{
+  const fires=x.rs4w>0&&x.shift<0;
+  const sg=fires?["+RS · de-correlating","t-div"]:(x.rs4w>0?["positive RS","t-flow"]:["lagging","t-lag"]);
+  return `<tr><td class="l"><span class="tk">${x.c}</span><span class="nm">${x.p}</span></td>
+   <td class="val ${cls(x.rs1w)}">${n2(x.rs1w)}</td><td class="val ${cls(x.rs4w)}">${n2(x.rs4w)}</td>
+   <td class="val ${cls(x.rs3m)}">${n2(x.rs3m)}</td><td class="val ${x.shift<0?'info':'dim'}">${n2(x.shift)}</td>
+   <td class="val ${cls(x.p200)}">${n2(x.p200,1)}%</td>
+   <td class="l">${SHOW_SCREEN?`<span class="tag `+sg[1]+`">`+sg[0]+`</span>`:""}</td></tr>
+   ${x.note?`<tr><td colspan="7" class="l" style="border-bottom:1px solid var(--line);padding-top:0"><span class="note">${x.note}</span></td></tr>`:""}`;}).join(""));
+ document.getElementById("subHd").textContent=SHOW_SCREEN?"Screen":"";
+ const nFire=D.subind.filter(x=>x.rs4w>0&&x.shift<0).length;
+ document.getElementById("subSummary").textContent=`Show sub-industry table · ${D.subind.length} rows`+(SHOW_SCREEN?` · ${nFire} de-correlating`:"");
+
+ set("volBody", D.vol.map(x=>{
+  return `<tr><td class="l"><span class="tk">${x.n}</span></td>
+   <td class="val hp">${x.s.toFixed(2)}</td><td class="val hp">${x.iv.toFixed(2)}</td>
+   <td class="val ${x.p<20?'pos':(x.p>65?'neg':'')}">${x.p.toFixed(1)}</td>
+   <td class="val hp ${x.r<1?'pos':(x.r>1?'neg':'')}">${x.r.toFixed(2)}</td>
+   <td class="val">${x.em.toFixed(2)}</td>
+   <td class="l">${SHOW_LANE&&LANE[x.lane]?`<span class="tag `+LANE[x.lane][1]+`">`+LANE[x.lane][0]+`</span>`:""}</td></tr>`;}).join(""));
+ document.getElementById("laneHd").textContent=SHOW_LANE?"Implied v realised":"";
+
+ set("ratioBody", D.ratios.map(x=>{
+  const above=x.lvl>x.ma;
+  return `<tr><td class="l"><span class="tk">${x.n}</span></td>
+   <td class="val ${above?'pos':'neg'}">${x.lvl.toFixed(5)}</td><td class="val dim">${x.ma.toFixed(5)}</td>
+   <td class="val ${cls(x.chg)}">${n2(x.chg)}%</td>
+   <td class="l hp"><span class="note clamp" title="Click to expand" onclick="this.classList.toggle('open')">${x.r}</span></td></tr>`;}).join(""));
+
+ set("macroBody", D.macro.map(m=>`<tr><td class="l">${m.k}</td><td class="val">${m.v}</td></tr>`).join(""));
+
+ set("checklist", D.checklist.slice(0,5).map(c=>`<div class="chk"><span class="box"></span>${c}</div>`).join(""));
+
+ // Footer: one visible line of the disclaimer; everything else folded.
+ const disc=D.disclaimer||"";
+ set("discLine", splitFirst(disc)[0]+(splitFirst(disc)[1]?' <span class="dim">More under “About this page”.</span>':""));
+ set("disclaimer", disc);
+ set("dataDate", "<b>Data as of the US close on "+D.week+".</b> Refreshed weekly after the Friday close.");
+ set("glossary", (D.glossary||[]).map(g=>
+  `<div class="gl${g.current?" cur":""}"><b>${g.name}</b>${g.current?'<span class="now">this week</span>':""}<p>${g.plain}</p></div>`).join(""));
+ set("glossaryNote", D.glossaryNote);
+ set("method", D.method);
+ set("envSentence", env.sentence);
+ document.getElementById("histLine").textContent=(D.history&&D.history.length)
+  ? "top 3 by RS_4wk — "+D.history.map(h=>h.week.slice(5)+" "+h.top3.join("/")).join("  ·  ") : "";
+}
+render();
+</script>
+</body>
+</html>
